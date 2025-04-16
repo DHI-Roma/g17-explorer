@@ -1,0 +1,3698 @@
+@prefix credit: <https://credit.niso.org/contributor-roles/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix g17raw: <https://g17.dhi-roma.it/raw/> .
+@prefix g17sn: <https://g17.dhi-roma.it/shacl/sparnatural-config/> .
+@prefix grace: <https://g17.dhi-roma.it/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sparnatural: <http://data.sparna.fr/ontologies/sparnatural-config-core#> .
+@prefix sparnatural_datasource: <http://data.sparna.fr/ontologies/sparnatural-config-datasources#> .
+@prefix volipi: <http://data.sparna.fr/ontologies/volipi#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+g17sn:ABBEY a sh:NodeShape ;
+    rdfs:label "Abbey"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A type of church that houses a community of monks or nuns under the authority of an abbot or abbess, typically secluded and dedicated to monastic life." ;
+    sh:description "A type of church that houses a community of monks or nuns under the authority of an abbot or abbess, typically secluded and dedicated to monastic life." ;
+    sh:name "Abbey" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:abbey .
+
+g17sn:ABSOLUTION a sh:NodeShape ;
+    rdfs:label "absolution"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:description "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:name "absolution" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.6 ;
+    sh:targetClass grace:absolution .
+
+g17sn:AFFILIATION a sh:NodeShape ;
+    rdfs:label "affiliation"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for affiliation" ;
+    sh:name "affiliation" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:affiliation .
+
+g17sn:APOSTOLIC_DISPENSATION a sh:NodeShape ;
+    rdfs:label "apostolic dispensation"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "An apostolic dispensation is a special exemption granted directly by the Pope or the Holy See, allowing a deviation from a Church law or regulation in exceptional circumstances. This type of dispensation is typically reserved for significant matters, such as resolving impediments to marriage, relaxing canonical obligations, or addressing unique pastoral needs" ;
+    sh:description "An apostolic dispensation is a special exemption granted directly by the Pope or the Holy See, allowing a deviation from a Church law or regulation in exceptional circumstances. This type of dispensation is typically reserved for significant matters, such as resolving impediments to marriage, relaxing canonical obligations, or addressing unique pastoral needs" ;
+    sh:name "apostolic dispensation" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:apostolic_dispensation .
+
+g17sn:APOSTOLIC_PROVISION a sh:NodeShape ;
+    rdfs:label "apostolic provision"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "A formal ecclesiastical decree issued by the Pope, governing the provision of ecclesiastical offices and benefits, often in response to specific events or needs within the Church." ;
+    sh:description "A formal ecclesiastical decree issued by the Pope, governing the provision of ecclesiastical offices and benefits, often in response to specific events or needs within the Church." ;
+    sh:name "apostolic provision" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:apostolic_provision .
+
+g17sn:APOSTOLIC_SUPPLICATION a sh:NodeShape ;
+    rdfs:label "apostolic supplication"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "An apostolic supplication is a special exemption granted directly by the Pope or the Holy See, allowing a deviation from a Church law or regulation in exceptional circumstances. This type of supplication is typically reserved for significant matters, such as resolving impediments to marriage, relaxing canonical obligations, or addressing unique pastoral needs" ;
+    sh:description "An apostolic supplication is a special exemption granted directly by the Pope or the Holy See, allowing a deviation from a Church law or regulation in exceptional circumstances. This type of supplication is typically reserved for significant matters, such as resolving impediments to marriage, relaxing canonical obligations, or addressing unique pastoral needs" ;
+    sh:name "apostolic supplication" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:apostolic_supplication .
+
+g17sn:ARCHDEANERY a sh:NodeShape ;
+    rdfs:label "archdeanery"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "An archdeanery is a larger or more prominent division within a diocese, typically encompassing multiple deaneries. It may be overseen by an archdean, who has a role similar to a dean but with broader responsibilities." ;
+    sh:description "An archdeanery is a larger or more prominent division within a diocese, typically encompassing multiple deaneries. It may be overseen by an archdean, who has a role similar to a dean but with broader responsibilities." ;
+    sh:name "archdeanery" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.21 ;
+    sh:targetClass grace:archdeanery .
+
+g17sn:ARCHDIOCESE a sh:NodeShape ;
+    rdfs:label "archdiocese"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "The primary diocese of an ecclesiastical province, led by an archbishop who oversees the suffragan dioceses within the province." ;
+    sh:description "The primary diocese of an ecclesiastical province, led by an archbishop who oversees the suffragan dioceses within the province." ;
+    sh:name "archdiocese" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.2 ;
+    sh:targetClass grace:archdiocese .
+
+g17sn:BASILICA a sh:NodeShape ;
+    rdfs:label "Basilica"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A church granted ceremonial privileges by the Pope, often distinguished by its architectural grandeur and historical significance, serving both liturgical and administrative roles." ;
+    sh:description "A church granted ceremonial privileges by the Pope, often distinguished by its architectural grandeur and historical significance, serving both liturgical and administrative roles." ;
+    sh:name "Basilica" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:basilica .
+
+g17sn:BENEFICE a sh:NodeShape ;
+    rdfs:label "benefice"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "A right or title granted to an ecclesiastical position, allowing the holder to receive income or benefits in exchange for performing religious duties." ;
+    sh:description "A right or title granted to an ecclesiastical position, allowing the holder to receive income or benefits in exchange for performing religious duties." ;
+    sh:name "benefice" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:benefice .
+
+g17sn:BIRTH a sh:NodeShape ;
+    rdfs:label "birth"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for birth" ;
+    sh:name "birth" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:birth .
+
+g17sn:CANTORS_HOUSE a sh:NodeShape ;
+    rdfs:label "Cantor's house"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A cantor’s house historically refers to the residence of a cantor, a person responsible for leading liturgical music or chanting in a church, synagogue, or other religious setting. It could also serve as a place for rehearsing or organizing musical activities related to worship." ;
+    sh:description "A cantor’s house historically refers to the residence of a cantor, a person responsible for leading liturgical music or chanting in a church, synagogue, or other religious setting. It could also serve as a place for rehearsing or organizing musical activities related to worship." ;
+    sh:name "Cantor's house" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:targetClass grace:cantors_house .
+
+g17sn:CAREER a sh:NodeShape ;
+    rdfs:label "career"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for career" ;
+    sh:name "career" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:career .
+
+g17sn:CATHEDRAL a sh:NodeShape ;
+    rdfs:label "cathedral"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "The principal church of a diocese, housing the bishop's official seat or cathedra, central to diocesan liturgy and administration." ;
+    sh:description "The principal church of a diocese, housing the bishop's official seat or cathedra, central to diocesan liturgy and administration." ;
+    sh:name "cathedral" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:cathedral .
+
+g17sn:CHAPEL a sh:NodeShape ;
+    rdfs:label "Chapel"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A small religious building, often located on private grounds or within an institution, used for worship and prayer, typically serving a specific group or community." ;
+    sh:description "A small religious building, often located on private grounds or within an institution, used for worship and prayer, typically serving a specific group or community." ;
+    sh:name "Chapel" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:chapel .
+
+g17sn:CHURCH a sh:NodeShape ;
+    rdfs:label "church"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A building used for public Christian worship, typically smaller and less formal than a cathedral, serving the local community's spiritual needs." ;
+    sh:description "A building used for public Christian worship, typically smaller and less formal than a cathedral, serving the local community's spiritual needs." ;
+    sh:name "church" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:church .
+
+g17sn:COADJUTARY a sh:NodeShape ;
+    rdfs:label "coadjutary"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "An auxiliary or assisting role within the church, where the incumbent supports another cleric in their duties, often due to age or health reasons." ;
+    sh:description "An auxiliary or assisting role within the church, where the incumbent supports another cleric in their duties, often due to age or health reasons." ;
+    sh:name "coadjutary" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.3 ;
+    sh:targetClass grace:coadjutary .
+
+g17sn:COLLEGIATE_CHURCH a sh:NodeShape ;
+    rdfs:label "Collegiate church"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A church endowed with a corporate body of clergy organized as a collegiate body, typically serving a larger community with a focus on liturgical services and choral music." ;
+    sh:description "A church endowed with a corporate body of clergy organized as a collegiate body, typically serving a larger community with a focus on liturgical services and choral music." ;
+    sh:name "Collegiate church" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:collegiate_church .
+
+g17sn:COMMENDA a sh:NodeShape ;
+    rdfs:label "commenda"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "A temporary ecclesiastical assignment where a cleric holds an office and administers its revenues, often without the obligation of residency or regular duties." ;
+    sh:description "A temporary ecclesiastical assignment where a cleric holds an office and administers its revenues, often without the obligation of residency or regular duties." ;
+    sh:name "commenda" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.2 ;
+    sh:targetClass grace:commenda .
+
+g17sn:CONTINENT a sh:NodeShape ;
+    rdfs:label "continent"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A large geographical division of the world, categorized in ecclesiastical terms for administrative and missionary purposes." ;
+    sh:description "A large geographical division of the world, categorized in ecclesiastical terms for administrative and missionary purposes." ;
+    sh:name "continent" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:targetClass grace:continent .
+
+g17sn:CONTRIBUTOR a sh:NodeShape ;
+    rdfs:label "contributor"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for contributor" ;
+    sh:name "contributor" ;
+    sh:nodeKind sh:IRI ;
+    sh:property g17sn:property_937 ;
+    sh:targetClass grace:contributor .
+
+g17sn:CUSTOM_REGION a sh:NodeShape ;
+    rdfs:label "custom region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A specific area defined or customized for particular administrative, ecclesiastical, or geographical purposes, often tailored to local needs or historical boundaries." ;
+    sh:description "A specific area defined or customized for particular administrative, ecclesiastical, or geographical purposes, often tailored to local needs or historical boundaries." ;
+    sh:name "custom region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:custom_region .
+
+g17sn:CUSTOM_SUBREGION a sh:NodeShape ;
+    rdfs:label "custom sub-region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A smaller, specific division within a custom region, also defined according to particular administrative, geographical, or ecclesiastical requirements." ;
+    sh:description "A smaller, specific division within a custom region, also defined according to particular administrative, geographical, or ecclesiastical requirements." ;
+    sh:name "custom sub-region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:custom_subregion .
+
+g17sn:DEACONRY a sh:NodeShape ;
+    rdfs:label "Deaconry"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A church benefice specifically dedicated to a deacon, emphasizing their liturgical and community service roles within the church's structure." ;
+    sh:description "A church benefice specifically dedicated to a deacon, emphasizing their liturgical and community service roles within the church's structure." ;
+    sh:name "Deaconry" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:deaconry .
+
+g17sn:DEANERY a sh:NodeShape ;
+    rdfs:label "deanery"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A deanery is a grouping of neighboring parishes within a diocese, overseen by a dean. It facilitates collaboration among parishes and supports the bishop in administering the diocese." ;
+    sh:description "A deanery is a grouping of neighboring parishes within a diocese, overseen by a dean. It facilitates collaboration among parishes and supports the bishop in administering the diocese." ;
+    sh:name "deanery" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.2 ;
+    sh:targetClass grace:deanery .
+
+g17sn:DEATH a sh:NodeShape ;
+    rdfs:label "death"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for death" ;
+    sh:name "death" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:death .
+
+g17sn:DIOCESE a sh:NodeShape ;
+    rdfs:label "diocese"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A diocese that is under the jurisdiction of an archdiocese, with its bishop typically reporting to the metropolitan archbishop." ;
+    sh:description "A diocese that is under the jurisdiction of an archdiocese, with its bishop typically reporting to the metropolitan archbishop." ;
+    sh:name "diocese" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:diocese .
+
+g17sn:DISPENSATION a sh:NodeShape ;
+    rdfs:label "dispensation"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:description "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:name "dispensation" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.4 ;
+    sh:targetClass grace:dispensation .
+
+g17sn:ECCLESIASTICAL_PROVINCE a sh:NodeShape ;
+    rdfs:label "ecclesiastical province"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A major administrative division within the church, encompassing several dioceses and governed by a metropolitan archbishop, coordinating regional church affairs." ;
+    sh:description "A major administrative division within the church, encompassing several dioceses and governed by a metropolitan archbishop, coordinating regional church affairs." ;
+    sh:name "ecclesiastical province" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:ecclesiastical_province .
+
+g17sn:EDUCATION a sh:NodeShape ;
+    rdfs:label "education"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for education" ;
+    sh:name "education" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:education .
+
+g17sn:HERMITAGE a sh:NodeShape ;
+    rdfs:label "Hermitage"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A religious building. Hermitages are places of contemplation in which clergy or religious laypeople lead a secluded life of prayer in often secluded hermitages and chapels. They are named after hermits, who do not necessarily have to be religious and live in such buildings or in buildings at all. Hermitages can also be huts or small country houses." ;
+    sh:description "A religious building. Hermitages are places of contemplation in which clergy or religious laypeople lead a secluded life of prayer in often secluded hermitages and chapels. They are named after hermits, who do not necessarily have to be religious and live in such buildings or in buildings at all. Hermitages can also be huts or small country houses." ;
+    sh:name "Hermitage" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:hermitage .
+
+g17sn:HOSPITAL a sh:NodeShape ;
+    rdfs:label "Hospital"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A building dedicated to healthcare services under the auspices of the church, often providing care for the sick and needy within a religious framework." ;
+    sh:description "A building dedicated to healthcare services under the auspices of the church, often providing care for the sick and needy within a religious framework." ;
+    sh:name "Hospital" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:targetClass grace:hospital .
+
+g17sn:IMMATERIAL_OBJECT a sh:NodeShape ;
+    rdfs:label "immaterial object"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:description "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:name "immaterial object" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:immaterial_object .
+
+g17sn:INDETERMINATE_SUFFRAGAN_DIOCESE a sh:NodeShape ;
+    rdfs:label "indeterminate suffragan diocese"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A type of ecclesiastical institution whose precise hierarchical or geographical affiliations are not clearly defined, often within a larger diocesan structure." ;
+    sh:description "A type of ecclesiastical institution whose precise hierarchical or geographical affiliations are not clearly defined, often within a larger diocesan structure." ;
+    sh:name "indeterminate suffragan diocese" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.1 ;
+    sh:targetClass grace:indeterminate_suffragan_diocese .
+
+g17sn:INDULT a sh:NodeShape ;
+    rdfs:label "indult"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:description "An ecclesiastical privilege granted by the Church authority, allowing a deviation from the usual canonical laws or rules for specific cases, often used to address unique circumstances or hardships." ;
+    sh:name "indult" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.5 ;
+    sh:targetClass grace:indult .
+
+g17sn:LOCALITY a sh:NodeShape ;
+    rdfs:label "locality"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A term for a specific area or neighborhood within a larger geographic or administrative region, often used in ecclesiastical contexts to specify church jurisdictions." ;
+    sh:description "A term for a specific area or neighborhood within a larger geographic or administrative region, often used in ecclesiastical contexts to specify church jurisdictions." ;
+    sh:name "locality" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:locality .
+
+g17sn:LOCATION a sh:NodeShape ;
+    rdfs:label "location"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A general term for any geographical area or position where a specific event or institution is situated, used broadly in ecclesiastical and secular contexts." ;
+    sh:description "A general term for any geographical area or position where a specific event or institution is situated, used broadly in ecclesiastical and secular contexts." ;
+    sh:name "location" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:location .
+
+g17sn:MAIN_PROPERTY a sh:NodeShape ;
+    rdfs:label "main property"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "Tooltip for main property" ;
+    sh:name "main property" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:main_property .
+
+g17sn:MEMBERSHIP a sh:NodeShape ;
+    rdfs:label "membership"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "membership in a religious order or society, e.g." ;
+    sh:description "membership in a religious order or society, e.g." ;
+    sh:name "membership" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:membership .
+
+g17sn:MONASTERY a sh:NodeShape ;
+    rdfs:label "Monastery"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A religious community where monks or nuns live, work, and worship, following the rules of their religious order, often secluded from the general public to maintain a focus on spiritual life." ;
+    sh:description "A religious community where monks or nuns live, work, and worship, following the rules of their religious order, often secluded from the general public to maintain a focus on spiritual life." ;
+    sh:name "Monastery" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:monastery .
+
+g17sn:MYSTERY_OF_FAITH a sh:NodeShape ;
+    rdfs:label "mystery of faith"@en ;
+    volipi:iconName "fa-solid fa-heart" ;
+    volipi:message "A concept or event that is considered a Mystery of Faithy by the Catholic Church" ;
+    sh:description "A concept or event that is considered a Mystery of Faithy by the Catholic Church" ;
+    sh:name "mystery of faith" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:mystery_of_faith .
+
+g17sn:NARRATIVE a sh:NodeShape ;
+    rdfs:label "narrative"@en ;
+    volipi:iconName "fa-solid fa-pen-fancy" ;
+    volipi:message "Tooltip for narrative" ;
+    sh:name "narrative" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:narrative .
+
+g17sn:NATURAL_PERSON a sh:NodeShape ;
+    rdfs:label "natural person"@en ;
+    volipi:iconName "fa-solid fa-user" ;
+    volipi:message "A legally recognized individual, as opposed to a corporate entity, involved in legal or church-related matters." ;
+    sh:description "A legally recognized individual, as opposed to a corporate entity, involved in legal or church-related matters." ;
+    sh:name "natural person" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:natural_person .
+
+g17sn:ORATORY a sh:NodeShape ;
+    rdfs:label "Oratory"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A designated space for prayer and worship, smaller than a church and often privately funded, used for personal devotion or by specific religious communities without the full status of a parish." ;
+    sh:description "A designated space for prayer and worship, smaller than a church and often privately funded, used for personal devotion or by specific religious communities without the full status of a parish." ;
+    sh:name "Oratory" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:targetClass grace:oratory .
+
+g17sn:PARISH a sh:NodeShape ;
+    rdfs:label "Parish"@en,
+        "parish"@en ;
+    volipi:iconName "fa-solid fa-tags",
+        "fa-solid fa-university" ;
+    volipi:message "A parish is a local community of the faithful within a diocese, entrusted to a parish priest for pastoral care, worship, and administration of sacraments.",
+        "A primary ecclesiastical unit providing religious services and community support to a localized area, typically led by a parish priest." ;
+    sh:description "A parish is a local community of the faithful within a diocese, entrusted to a parish priest for pastoral care, worship, and administration of sacraments.",
+        "A primary ecclesiastical unit providing religious services and community support to a localized area, typically led by a parish priest." ;
+    sh:name "Parish",
+        "parish" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.1,
+        3.0 ;
+    sh:targetClass grace:parish .
+
+g17sn:PARISH_CHURCH a sh:NodeShape ;
+    rdfs:label "Parish Church"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A church serving a local community or parish, often responsible for delivering regular religious services, community engagement, and spiritual guidance to its congregants." ;
+    sh:description "A church serving a local community or parish, often responsible for delivering regular religious services, community engagement, and spiritual guidance to its congregants." ;
+    sh:name "Parish Church" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:parish_church .
+
+g17sn:PARISH_HALL a sh:NodeShape ;
+    rdfs:label "Parish hall"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A building or space associated with a church used for meetings, social activities, and gatherings of the parish community." ;
+    sh:description "A building or space associated with a church used for meetings, social activities, and gatherings of the parish community." ;
+    sh:name "Parish hall" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:targetClass grace:parish_hall .
+
+g17sn:PENSION a sh:NodeShape ;
+    rdfs:label "pension"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "A regular payment made to a cleric or church official, typically as a retirement benefit or for services rendered, not tied to specific duties." ;
+    sh:description "A regular payment made to a cleric or church official, typically as a retirement benefit or for services rendered, not tied to specific duties." ;
+    sh:name "pension" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.1 ;
+    sh:targetClass grace:pension .
+
+g17sn:PHYSICAL_ARCHIVE a sh:NodeShape ;
+    rdfs:label "physical archive"@en ;
+    volipi:iconName "fa-solid fa-box-archive" ;
+    volipi:message "Tooltip for physical archive" ;
+    sh:name "physical archive" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:physical_archive .
+
+g17sn:PHYSICAL_SOURCE a sh:NodeShape ;
+    rdfs:label "physical source"@en ;
+    volipi:iconName "fa-solid fa-book" ;
+    volipi:message "Tooltip for physical source" ;
+    sh:name "physical source" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:physical_source .
+
+g17sn:POSITION a sh:NodeShape ;
+    rdfs:label "position"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "office or occupation held by a person" ;
+    sh:description "office or occupation held by a person" ;
+    sh:name "position" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:position .
+
+g17sn:PRIORY a sh:NodeShape ;
+    rdfs:label "Priory"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A religious house governed by a prior or prioress, smaller than an abbey but still dedicated to the monastic life of its community members." ;
+    sh:description "A religious house governed by a prior or prioress, smaller than an abbey but still dedicated to the monastic life of its community members." ;
+    sh:name "Priory" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:priory .
+
+g17sn:RECORD a sh:NodeShape ;
+    rdfs:label "record"@en ;
+    volipi:iconName "fa-solid fa-pen-fancy" ;
+    volipi:message "Tooltip for record" ;
+    sh:name "record" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:record .
+
+g17sn:REGION a sh:NodeShape ;
+    rdfs:label "region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A general term for a larger geographic or administrative area, commonly used in both secular and ecclesiastical contexts to organize territories and manage affairs." ;
+    sh:description "A general term for a larger geographic or administrative area, commonly used in both secular and ecclesiastical contexts to organize territories and manage affairs." ;
+    sh:name "region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:region .
+
+g17sn:SAINT a sh:NodeShape ;
+    rdfs:label "saint"@en ;
+    volipi:iconName "fa-solid fa-heart" ;
+    volipi:message "An individual saint of the Catholic Church" ;
+    sh:description "An individual saint of the Catholic Church" ;
+    sh:name "saint" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:saint .
+
+g17sn:SCHEMA a sh:NodeShape ;
+    rdfs:label "schema"@en ;
+    volipi:iconName "fa-solid fa-sitemap" ;
+    volipi:message "Tooltip for schema" ;
+    sh:name "schema" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 60.0 ;
+    sh:property g17sn:property_925,
+        g17sn:property_927 ;
+    sh:targetClass grace:schema .
+
+g17sn:SEAT_OF_WORSHIP a sh:NodeShape ;
+    rdfs:label "seat of worship"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "auto-generated from erectChurch()" ;
+    sh:description "auto-generated from erectChurch()" ;
+    sh:name "seat of worship" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:seat_of_worship .
+
+g17sn:SERIAL_SOURCE a sh:NodeShape ;
+    rdfs:label "serial source"@en ;
+    volipi:iconName "fa-solid fa-book" ;
+    volipi:message "Tooltip for serial source" ;
+    sh:name "serial source" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:serial_source .
+
+g17sn:ST_PETERS_BASILICA a sh:NodeShape ;
+    rdfs:label "St. Peter's Basilica"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "The largest and most renowned basilica in the world, located in Vatican City, serving as a major pilgrimage site and the principal church of the Roman Catholic Church." ;
+    sh:description "The largest and most renowned basilica in the world, located in Vatican City, serving as a major pilgrimage site and the principal church of the Roman Catholic Church." ;
+    sh:name "St. Peter's Basilica" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:st_peters_basilica .
+
+g17sn:SUBREGION a sh:NodeShape ;
+    rdfs:label "sub-region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A specific geographic division within a larger region, used in ecclesiastical and civil administration to organize local governance and church jurisdictions." ;
+    sh:description "A specific geographic division within a larger region, used in ecclesiastical and civil administration to organize local governance and church jurisdictions." ;
+    sh:name "sub-region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:subregion .
+
+g17sn:SUFFRAGAN_DIOCESE a sh:NodeShape ;
+    rdfs:label "suffragan diocese"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A diocese that is under the jurisdiction of an archdiocese, with its bishop typically reporting to the metropolitan archbishop." ;
+    sh:description "A diocese that is under the jurisdiction of an archdiocese, with its bishop typically reporting to the metropolitan archbishop." ;
+    sh:name "suffragan diocese" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.1 ;
+    sh:targetClass grace:suffragan_diocese .
+
+g17sn:SUPREME_BODY_OF_GOVERNMENT a sh:NodeShape ;
+    rdfs:label "supreme body of government"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "The highest administrative or governing body within a certain context, such as a government or ecclesiastical organization, responsible for overarching decision-making and policy." ;
+    sh:description "The highest administrative or governing body within a certain context, such as a government or ecclesiastical organization, responsible for overarching decision-making and policy." ;
+    sh:name "supreme body of government" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:supreme_body_of_government .
+
+g17sn:TERM a sh:NodeShape ;
+    rdfs:label "term"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "Tooltip for term" ;
+    sh:name "term" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:term .
+
+g17sn:TERRITORIAL_PRELATE a sh:NodeShape ;
+    rdfs:label "territorial prelate"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "\"nullius\"" ;
+    sh:description "\"nullius\"" ;
+    sh:name "territorial prelate" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.6 ;
+    sh:targetClass grace:territorial_prelate .
+
+g17sn:TEXTUAL_SOURCE a sh:NodeShape ;
+    rdfs:label "textual source"@en ;
+    volipi:iconName "fa-solid fa-book" ;
+    volipi:message "Tooltip for textual source" ;
+    sh:name "textual source" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:textual_source .
+
+g17sn:TYPE_OF_IDENTIFIER a sh:NodeShape ;
+    rdfs:label "type of identifier"@en ;
+    volipi:iconName "fa-solid fa-fingerprint" ;
+    volipi:message "Tooltip for type of identifier" ;
+    sh:name "type of identifier" ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass grace:type_of_identifier .
+
+g17sn:UNIDENTIFIED_LOCALITY a sh:NodeShape ;
+    rdfs:label "unidentified locality"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A designation for an area whose exact identity or specifics are not clearly defined or recorded, often used in ecclesiastical documents for areas with unclear boundaries." ;
+    sh:description "A designation for an area whose exact identity or specifics are not clearly defined or recorded, often used in ecclesiastical documents for areas with unclear boundaries." ;
+    sh:name "unidentified locality" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:targetClass grace:unidentified_locality .
+
+g17sn:UNIDENTIFIED_LOCATION a sh:NodeShape ;
+    rdfs:label "unidentified location"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A term used when the specific location of an event, institution, or property cannot be identified or confirmed, often appearing in historical records." ;
+    sh:description "A term used when the specific location of an event, institution, or property cannot be identified or confirmed, often appearing in historical records." ;
+    sh:name "unidentified location" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:unidentified_location .
+
+g17sn:UNIDENTIFIED_NATURAL_PERSON a sh:NodeShape ;
+    rdfs:label "unidentified natural person"@en ;
+    volipi:iconName "fa-solid fa-user" ;
+    volipi:message "A term used when the identity of an individual involved in ecclesiastical or legal proceedings cannot be determined or is not specified." ;
+    sh:description "A term used when the identity of an individual involved in ecclesiastical or legal proceedings cannot be determined or is not specified." ;
+    sh:name "unidentified natural person" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:unidentified_natural_person .
+
+g17sn:UNIDENTIFIED_REGION a sh:NodeShape ;
+    rdfs:label "unidentified region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A term for areas within ecclesiastical records that are not clearly identified or whose exact location remains unspecified, often used in historical or archival contexts." ;
+    sh:description "A term for areas within ecclesiastical records that are not clearly identified or whose exact location remains unspecified, often used in historical or archival contexts." ;
+    sh:name "unidentified region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:targetClass grace:unidentified_region .
+
+g17sn:UNIDENTIFIED_SAINT a sh:NodeShape ;
+    rdfs:label "unidentified saint"@en ;
+    volipi:iconName "fa-solid fa-heart" ;
+    volipi:message "An individual saint of the Catholic Church" ;
+    sh:description "An individual saint of the Catholic Church" ;
+    sh:name "unidentified saint" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:unidentified_saint .
+
+g17sn:UNIDENTIFIED_SUBREGION a sh:NodeShape ;
+    rdfs:label "unidentified sub-region"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A term for a geographic area within ecclesiastical records that is not clearly defined or recognized, reflecting incomplete or vague documentation." ;
+    sh:description "A term for a geographic area within ecclesiastical records that is not clearly defined or recognized, reflecting incomplete or vague documentation." ;
+    sh:name "unidentified sub-region" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:unidentified_subregion .
+
+g17sn:UNIVERSITY_DEGREE a sh:NodeShape ;
+    rdfs:label "university degree"@en ;
+    volipi:iconName "fa-solid fa-gavel" ;
+    volipi:message "Tooltip for university degree" ;
+    sh:name "university degree" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:university_degree .
+
+g17sn:VICARAGE a sh:NodeShape ;
+    rdfs:label "Vicarage"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "A church building or establishment where a vicar serves, often provided as part of a benefice that includes living quarters and a stipend." ;
+    sh:description "A church building or establishment where a vicar serves, often provided as part of a benefice that includes living quarters and a stipend." ;
+    sh:name "Vicarage" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:targetClass grace:vicarage .
+
+g17sn:VICARIATE a sh:NodeShape ;
+    rdfs:label "vicariate"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "A vicariate is an administrative division within a diocese or a mission territory, entrusted to a vicar. It is established to facilitate governance and pastoral care, especially in large or geographically challenging areas." ;
+    sh:description "A vicariate is an administrative division within a diocese or a mission territory, entrusted to a vicar. It is established to facilitate governance and pastoral care, especially in large or geographically challenging areas." ;
+    sh:name "vicariate" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.22 ;
+    sh:targetClass grace:vicariate .
+
+g17sn:information_object_1357 a sh:NodeShape ;
+    rdfs:label "Information Object"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for Information Object" ;
+    sh:deactivated true ;
+    sh:name "Information Object" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 52.0 ;
+    sh:property g17sn:property_949 ;
+    sh:targetClass g17raw:information_object .
+
+g17sn:property_351 a sh:PropertyShape ;
+    rdfs:label "conceptualization"@en ;
+    volipi:message "Ideas; formulation or evolution of overarching research goals and aims." ;
+    sh:description "Ideas; formulation or evolution of overarching research goals and aims." ;
+    sh:name "conceptualization" ;
+    sh:path credit:conceptualization .
+
+g17sn:property_352 a sh:PropertyShape ;
+    rdfs:label "data curation"@en ;
+    volipi:message "Management activities to annotate (produce metadata), scrub data and maintain research data (including software code, where it is necessary for interpreting the data itself) for initial use and later reuse." ;
+    sh:description "Management activities to annotate (produce metadata), scrub data and maintain research data (including software code, where it is necessary for interpreting the data itself) for initial use and later reuse." ;
+    sh:name "data curation" ;
+    sh:path credit:data-curation .
+
+g17sn:property_356 a sh:PropertyShape ;
+    rdfs:label "methodology"@en ;
+    volipi:message "Development or design of methodology; creation of models." ;
+    sh:description "Development or design of methodology; creation of models." ;
+    sh:name "methodology" ;
+    sh:path credit:methodology .
+
+g17sn:property_923 a sh:PropertyShape ;
+    rdfs:label "id type"@en ;
+    volipi:message "Tooltip for id type" ;
+    sh:class grace:type ;
+    sh:name "id type" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:id_type .
+
+g17sn:property_936 a sh:PropertyShape ;
+    rdfs:label "contributor literal"@en ;
+    volipi:message "Tooltip for contributor literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "contributor literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:contributor_literal .
+
+g17sn:raw_data_1358 a sh:NodeShape ;
+    rdfs:label "Raw Data"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for Raw Data" ;
+    sh:name "Raw Data" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 52.0 ;
+    sh:targetClass g17raw:raw_data .
+
+sparnatural_datasource:ListAll sparnatural_datasource:queryString "SELECT ?iri ?label WHERE { ?iri a $range . ?iri rdfs:label ?label . } ORDER BY UCASE(?label) LIMIT 5000" .
+
+g17sn:BIOGRAPHICAL_EVENT a sh:NodeShape ;
+    rdfs:label "biographical event"@en ;
+    volipi:iconName "fa-solid fa-cross" ;
+    volipi:message "Tooltip for biographical event" ;
+    sh:name "biographical event" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:property g17sn:property_1089,
+        g17sn:property_1301,
+        g17sn:property_1341,
+        g17sn:property_1352 ;
+    sh:targetClass grace:biographical_event .
+
+g17sn:CREDIT a sh:NodeShape ;
+    rdfs:label "credit"@en ;
+    volipi:iconName "fa-solid fa-credit-card" ;
+    volipi:message "Tooltip for credit" ;
+    sh:name "credit" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 61.0 ;
+    sh:targetClass grace:credit .
+
+g17sn:INSTITUTION_TERRITORY a sh:NodeShape ;
+    rdfs:label "institution territory"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "A term for a geographic area within ecclesiastical records that comprises the boundaries of an institution’s jurisdiction." ;
+    sh:description "A term for a geographic area within ecclesiastical records that comprises the boundaries of an institution’s jurisdiction." ;
+    sh:name "institution territory" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:institution_territory .
+
+g17sn:PAPAL_GRACE a sh:NodeShape ;
+    rdfs:label "papal grace"@en ;
+    volipi:iconName "fa-solid fa-cross" ;
+    volipi:message "Tooltip for papal grace" ;
+    sh:name "papal grace" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:papal_grace .
+
+g17sn:analysis_1160 a sh:NodeShape ;
+    rdfs:label "analysis"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "a container of analytical insights in RDF" ;
+    sh:description "a container of analytical insights in RDF" ;
+    sh:name "analysis" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 53.0 ;
+    sh:property g17sn:property_1162 ;
+    sh:targetClass g17raw:analysis .
+
+g17sn:label_1311 a sh:NodeShape ;
+    rdfs:label "label"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for label" ;
+    sh:name "label" ;
+    sh:nodeKind sh:IRI ;
+    sh:property g17sn:property_1312,
+        g17sn:property_1313,
+        g17sn:property_1323 ;
+    sh:targetClass g17raw:label .
+
+g17sn:map_1053 a sh:NodeShape ;
+    rdfs:label "map"@en ;
+    volipi:iconName "fa-solid fa-map" ;
+    volipi:message "A search value for maps (This is only a query pattern)" ;
+    sh:description "A search value for maps" ;
+    sh:name "map" ;
+    sh:nodeKind sh:Literal .
+
+g17sn:project_1420 a sh:NodeShape ;
+    rdfs:label "project"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for project" ;
+    sh:name "project" ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass g17raw:project .
+
+g17sn:property_100 a sh:PropertyShape ;
+    rdfs:label "cardinal with duties"@en ;
+    volipi:message "A cardinal assigned specific responsibilities, often administrative or liturgical, reflecting their integral role in the governance of the Church and their close collaboration with the Pope." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A cardinal assigned specific responsibilities, often administrative or liturgical, reflecting their integral role in the governance of the Church and their close collaboration with the Pope." ;
+    sh:name "cardinal with duties" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:cardinal_with_duties .
+
+g17sn:property_101 a sh:PropertyShape ;
+    rdfs:label "legal patron"@en ;
+    volipi:message "An individual or institution with the legal authority to appoint or recommend candidates for ecclesiastical offices, typically rooted in historical rights or privileges." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "An individual or institution with the legal authority to appoint or recommend candidates for ecclesiastical offices, typically rooted in historical rights or privileges." ;
+    sh:name "legal patron" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:legal_patron .
+
+g17sn:property_1011 a sh:PropertyShape ;
+    rdfs:label "dedication of"@en ;
+    volipi:message "Tooltip for dedication of" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "dedication of" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:dedication_of .
+
+g17sn:property_102 a sh:PropertyShape ;
+    rdfs:label "informal patron"@en ;
+    volipi:message "A person who exerts influence over the appointment of ecclesiastical positions through personal or political connections, rather than formal legal rights." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A person who exerts influence over the appointment of ecclesiastical positions through personal or political connections, rather than formal legal rights." ;
+    sh:name "informal patron" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:informal_patron .
+
+g17sn:property_103 a sh:PropertyShape ;
+    rdfs:label "executor"@en ;
+    volipi:message "An official appointed to ensure the execution of ecclesiastical laws and decisions, often tasked with overseeing adherence to canonical directives in specific contexts or situations." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "An official appointed to ensure the execution of ecclesiastical laws and decisions, often tasked with overseeing adherence to canonical directives in specific contexts or situations." ;
+    sh:name "executor" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:executor .
+
+g17sn:property_1047 a sh:PropertyShape ;
+    rdfs:label "extended"@en ;
+    sparnatural:beginDateProperty "https://g17.dhi-roma.it/ontology/started" ;
+    sparnatural:endDateProperty "https://g17.dhi-roma.it/ontology/ended" ;
+    volipi:message "Extends over the time range for this date. (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:TimeProperty-Date ;
+    sh:datatype g17sn:date_value ;
+    sh:description "Extends over the time range for this date." ;
+    sh:name "extended" ;
+    sh:node g17sn:date_value_1157 ;
+    sh:nodeKind sh:Literal ;
+    sh:path g17sn:extended .
+
+g17sn:property_1049 a sh:PropertyShape ;
+    rdfs:label "related to"@en ;
+    volipi:message "A wildcard property to relate some resource to another (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:anything ;
+    sh:description "A wildcard property to relate some resource to another" ;
+    sh:name "related to" ;
+    sh:node g17sn:ANYTHING ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( [ sh:alternativePath ( grace:refers_to [ sh:inversePath grace:refers_to ] ) ] ) .
+
+g17sn:property_1050 a sh:PropertyShape ;
+    rdfs:label "holds source"@en ;
+    volipi:message "Tooltip for holds source (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:source ;
+    sh:name "holds source" ;
+    sh:node g17sn:SOURCE ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:inversePath grace:in_archive ] .
+
+g17sn:property_1051 a sh:PropertyShape ;
+    rdfs:label "is main type of"@en ;
+    volipi:message "Tooltip for is main type of (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:dedication,
+        grace:event,
+        grace:institution,
+        grace:object,
+        grace:person,
+        grace:place ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "is main type of" ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class g17sn:PERSON ;
+                sh:node g17sn:PERSON ] [ sh:class g17sn:EVENT ;
+                sh:node g17sn:EVENT ] [ sh:class g17sn:PLACE ;
+                sh:node g17sn:PLACE ] [ sh:class g17sn:INSTITUTION ;
+                sh:node g17sn:INSTITUTION ] [ sh:class g17sn:OBJECT ;
+                sh:node g17sn:OBJECT ] [ sh:class g17sn:DEDICATION ;
+                sh:node g17sn:DEDICATION ] ) ;
+    sh:path [ sh:inversePath grace:has_main_type ] .
+
+g17sn:property_1052 a sh:PropertyShape ;
+    rdfs:label "is option of"@en ;
+    volipi:message "Tooltip for is option of (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:event,
+        grace:object ;
+    sh:name "is option of" ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class g17sn:EVENT ;
+                sh:node g17sn:EVENT ] [ sh:class g17sn:OBJECT ;
+                sh:node g17sn:OBJECT ] ) ;
+    sh:path [ sh:inversePath grace:has_option ] .
+
+g17sn:property_1055 a sh:PropertyShape ;
+    rdfs:label "immaterial object given to diocese"@en ;
+    volipi:message "returns dioceses related to an event's immaterial object (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "returns dioceses related to an event's immaterial object" ;
+    sh:name "immaterial object given to diocese" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( grace:event_related_to_object [ sh:zeroOrMorePath grace:object_related_to_object ] grace:in_diocese ) .
+
+g17sn:property_1057 a sh:PropertyShape ;
+    rdfs:label "is primary place of"@en ;
+    volipi:message "Tooltip for is primary place of (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "is primary place of" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:inversePath grace:primary_place ] .
+
+g17sn:property_1058 a sh:PropertyShape ;
+    rdfs:label "contains entry"@en ;
+    volipi:message "Tooltip for contains entry (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:entry ;
+    sh:name "contains entry" ;
+    sh:node g17sn:ENTRY ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:inversePath grace:in_source ] .
+
+g17sn:property_1059 a sh:PropertyShape ;
+    rdfs:label "diocese place"@en ;
+    volipi:message "Tooltip for diocese place (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:name "diocese place" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( grace:in_diocese grace:primary_place ) .
+
+g17sn:property_1060 a sh:PropertyShape ;
+    rdfs:label "concerns place"@en ;
+    volipi:message "A primary place of an institution that holds an object that is related to an event (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:description "A primary place of an institution that holds an object that is related to an event" ;
+    sh:name "concerns place" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( grace:event_related_to_object grace:in_diocese grace:primary_place ) .
+
+g17sn:property_1061 a sh:PropertyShape ;
+    rdfs:label "holds object"@en ;
+    volipi:message "returns all objects (directly and indirectly) held by an institution" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:object ;
+    sh:description "returns all objects (directly and indirectly) held by an institution" ;
+    sh:name "holds object" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:holds_object .
+
+g17sn:property_1089 a sh:PropertyShape ;
+    rdfs:label "related institution"@en ;
+    volipi:message "An institution that is related to a person." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "An institution that is related to a person." ;
+    sh:name "related institution" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:related_institution .
+
+g17sn:property_1092 a sh:PropertyShape ;
+    rdfs:label "similar to"@en ;
+    sparnatural_datasource:datasource sparnatural_datasource:ListAll ;
+    volipi:message "A calculation to find a similar resource (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:deactivated true ;
+    sh:description "A calculation to find a similar resource" ;
+    sh:name "similar to" ;
+    sh:or ( [ sh:node g17sn:ENTRY ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:PERSON ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:ARCHIVE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:SOURCE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:EVENT ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:TYPE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:PLACE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:INSTITUTION ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:DATE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:OBJECT ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:MONETARY_VALUE ;
+                sh:nodeKind sh:IRI ] [ sh:node g17sn:DEDICATION ;
+                sh:nodeKind sh:IRI ] ) ;
+    sh:path <http://shmarql.com/vec> .
+
+g17sn:property_1094 a sh:PropertyShape ;
+    rdfs:label "matches text"@en ;
+    volipi:message "Use * as wildcard (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:datatype g17sn:name ;
+    sh:deactivated true ;
+    sh:description "Use * as wildcard" ;
+    sh:name "matches text" ;
+    sh:node g17sn:name_1156 ;
+    sh:nodeKind sh:Literal ;
+    sh:path <http://shmarql.com/fts> .
+
+g17sn:property_1104 a sh:PropertyShape ;
+    rdfs:label "in subregister"@en ;
+    volipi:message "Tooltip for in subregister" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "in subregister" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_subregister .
+
+g17sn:property_1109 a sh:PropertyShape ;
+    rdfs:label "level"@en ;
+    volipi:message "Tooltip for level" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "level" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:level .
+
+g17sn:property_1110 a sh:PropertyShape ;
+    rdfs:label "has top term"@en ;
+    volipi:message "Tooltip for has top term" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "has top term" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:has_top_term .
+
+g17sn:property_1111 a sh:PropertyShape ;
+    rdfs:label "top term of thesaurus"@en ;
+    volipi:message "Tooltip for top term of thesaurus" ;
+    sh:class grace:thesaurus ;
+    sh:name "top term of thesaurus" ;
+    sh:node g17sn:THESAURUS ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:top_term_of_thesaurus .
+
+g17sn:property_1116 a sh:PropertyShape ;
+    rdfs:label "in capacity of"@en ;
+    volipi:message "Tooltip for in capacity of" ;
+    sh:class grace:institution ;
+    sh:name "in capacity of" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_capacity_of .
+
+g17sn:property_1117 a sh:PropertyShape ;
+    rdfs:label "authority by institution"@en ;
+    volipi:message "an institution being in charge or acting as authority" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "an institution being in charge or acting as authority" ;
+    sh:name "authority by institution" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:path grace:authority_by_institution .
+
+g17sn:property_1119 a sh:PropertyShape ;
+    rdfs:label "decided by"@en ;
+    volipi:message "A term used to describe someone who has received a benefit, office, or provision from an ecclesiastical authority." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:person ;
+    sh:description "A term used to describe someone who has received a benefit, office, or provision from an ecclesiastical authority." ;
+    sh:name "decided by" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:path grace:decided_by .
+
+g17sn:property_1122 a sh:PropertyShape ;
+    rdfs:label "event related to event"@en ;
+    sparnatural:tooltip "Tooltip for event related to event (symmetric property)" ;
+    volipi:message "Tooltip for event related to event" ;
+    sh:class grace:event ;
+    sh:name "event related to event" ;
+    sh:node g17sn:EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path ( [ sh:alternativePath ( grace:event_related_to_event [ sh:inversePath grace:event_related_to_event ] ) ] ) .
+
+g17sn:property_1124 a sh:PropertyShape ;
+    rdfs:label "for church"@en ;
+    volipi:message "An object applies to a specific church" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "An object applies to a specific church" ;
+    sh:name "for church" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:for_church .
+
+g17sn:property_1139 a sh:PropertyShape ;
+    rdfs:label "is top term of"@en ;
+    volipi:message "Tooltip for is top term of (This is only a query pattern) (transitive property)" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "is top term of" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:inversePath grace:has_top_term ] .
+
+g17sn:property_1140 a sh:PropertyShape ;
+    rdfs:label "is top thesaurus of"@en ;
+    volipi:message "Tooltip for is top thesaurus of (This is only a query pattern) (transitive property)" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "is top thesaurus of" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:inversePath grace:top_term_of_thesaurus ] .
+
+g17sn:property_1141 a sh:PropertyShape ;
+    rdfs:label "residence"@en ;
+    volipi:message "A term explicitly indicating an obligation to reside in some institution." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A term explicitly indicating an obligation to reside in some institution." ;
+    sh:name "residence" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:residence .
+
+g17sn:property_1144 a sh:PropertyShape ;
+    rdfs:label "in deanery"@en ;
+    volipi:message "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific deanery, denoting administrative and geographical affiliation." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific deanery, denoting administrative and geographical affiliation." ;
+    sh:name "in deanery" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:in_deanery .
+
+g17sn:property_1162 a sh:PropertyShape ;
+    rdfs:label "bow objects"@en ;
+    volipi:message "Bag of Words of types from related objects" ;
+    sh:description "Bag of Words of types from related objects" ;
+    sh:name "bow objects" ;
+    sh:order 1.0 ;
+    sh:path g17raw:bow_objects .
+
+g17sn:property_1165 a sh:PropertyShape ;
+    rdfs:label "type of archive"@en ;
+    volipi:message "The primary type of an archive" ;
+    sh:class grace:type ;
+    sh:description "The primary type of an archive" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of archive" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_archive .
+
+g17sn:property_1166 a sh:PropertyShape ;
+    rdfs:label "type of source"@en ;
+    volipi:message "The primary type of a source" ;
+    sh:class grace:type ;
+    sh:description "The primary type of a source" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of source" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_source .
+
+g17sn:property_1167 a sh:PropertyShape ;
+    rdfs:label "type of entry"@en ;
+    volipi:message "The primary type of an entry" ;
+    sh:class grace:type ;
+    sh:description "The primary type of an entry" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of entry" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_entry .
+
+g17sn:property_1175 a sh:PropertyShape ;
+    rdfs:label "subject of"@en ;
+    volipi:message "traces an event that concerns an object (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:event ;
+    sh:description "traces an event that concerns an object" ;
+    sh:name "subject of" ;
+    sh:node g17sn:EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:alternativePath ( [ sh:zeroOrMorePath grace:event_object ] [ sh:zeroOrMorePath [ sh:inversePath grace:object_object ] ] ) ] .
+
+g17sn:property_1177 a sh:PropertyShape ;
+    rdfs:label "type of type"@en ;
+    volipi:message "Tooltip for type of type" ;
+    sh:class grace:type ;
+    sh:name "type of type" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_type .
+
+g17sn:property_1195 a sh:PropertyShape ;
+    rdfs:label "concerns"@en ;
+    volipi:message "This traces objects concerned by an event (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:object ;
+    sh:description "This traces objects concerned by an event" ;
+    sh:name "concerns" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:path [ sh:alternativePath ( [ sh:zeroOrMorePath grace:object_object ] [ sh:zeroOrMorePath [ sh:inversePath grace:event_object ] ] ) ] .
+
+g17sn:property_1196 a sh:PropertyShape ;
+    rdfs:label "object related to event"@en ;
+    volipi:message "Tooltip for object related to event" ;
+    sh:class grace:event ;
+    sh:name "object related to event" ;
+    sh:node g17sn:EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:object_related_to_event .
+
+g17sn:property_1198 a sh:PropertyShape ;
+    rdfs:label "competitor"@en ;
+    volipi:message "A term used to describe someone who is in competition or a candidate for a benefice." ;
+    sh:class grace:person ;
+    sh:description "A term used to describe someone who is in competition or a candidate for a benefice." ;
+    sh:name "competitor" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:competitor .
+
+g17sn:property_1206 a sh:PropertyShape ;
+    rdfs:label "identifier object"@en ;
+    volipi:message "Tooltip for identifier object" ;
+    sh:class grace:identifier ;
+    sh:name "identifier object" ;
+    sh:node g17sn:IDENTIFIER ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:identifier_object .
+
+g17sn:property_1220 a sh:PropertyShape ;
+    rdfs:label "ids"@en ;
+    volipi:message "Tooltip for ids" ;
+    sh:class grace:identifier ;
+    sh:name "ids" ;
+    sh:node g17sn:IDENTIFIER ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:ids .
+
+g17sn:property_1222 a sh:PropertyShape ;
+    rdfs:label "example"@en ;
+    volipi:message "Tooltip for example" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "example" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:example .
+
+g17sn:property_1270 a sh:PropertyShape ;
+    rdfs:label "patronage type"@en ;
+    volipi:message "A term indicating an ecclesiastical duty or office that involves the pastoral care and spiritual welfare of the church's parishioners." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A term indicating an ecclesiastical duty or office that involves the pastoral care and spiritual welfare of the church's parishioners." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "patronage type" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:patronage_type .
+
+g17sn:property_1296 a sh:PropertyShape ;
+    rdfs:label "name suffix"@en ;
+    volipi:message "Tooltip for name suffix" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "name suffix" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:name_suffix .
+
+g17sn:property_1297 a sh:PropertyShape ;
+    rdfs:label "name title"@en ;
+    volipi:message "Tooltip for name title" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "name title" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:name_title .
+
+g17sn:property_1298 a sh:PropertyShape ;
+    rdfs:label "kinship"@en ;
+    sparnatural:tooltip "Some person being related to another person by kinship (symmetric property)" ;
+    volipi:message "Some person being related to another person by kinship" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "Some person being related to another person by kinship" ;
+    sh:name "kinship" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path ( [ sh:alternativePath ( grace:kinship [ sh:inversePath grace:kinship ] ) ] ) .
+
+g17sn:property_1299 a sh:PropertyShape ;
+    rdfs:label "mid date"@en ;
+    volipi:message "Tooltip for mid date" ;
+    dash:searchWidget sparnatural:TimeProperty-Date ;
+    sh:name "mid date" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:date_value ;
+                sh:node g17sn:date_value_1157 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:mid_date .
+
+g17sn:property_1307 a sh:PropertyShape ;
+    rdfs:label "Ninox Record"@en ;
+    volipi:message "Tooltip for Ninox Record" ;
+    sh:class g17sn:URI ;
+    sh:name "Ninox Record" ;
+    sh:node g17sn:uri_1359 ;
+    sh:nodeKind sh:IRI ;
+    sh:path g17raw:ninox_record .
+
+g17sn:property_1312 a sh:PropertyShape ;
+    rdfs:label "label name"@en ;
+    volipi:message "Tooltip for label name" ;
+    sh:name "label name" ;
+    sh:order 1.0 ;
+    sh:path g17raw:label_name .
+
+g17sn:property_1313 a sh:PropertyShape ;
+    rdfs:label "has main property"@en ;
+    volipi:message "Tooltip for has main property" ;
+    sh:class grace:type ;
+    sh:name "has main property" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:has_main_property .
+
+g17sn:property_1314 a sh:PropertyShape ;
+    rdfs:label "span text"@en ;
+    volipi:message "Tooltip for span text" ;
+    sh:name "span text" ;
+    sh:order 1.0 ;
+    sh:path g17raw:span_text .
+
+g17sn:property_1315 a sh:PropertyShape ;
+    rdfs:label "span start"@en ;
+    volipi:message "Tooltip for span start" ;
+    sh:name "span start" ;
+    sh:order 1.0 ;
+    sh:path g17raw:span_start .
+
+g17sn:property_1316 a sh:PropertyShape ;
+    rdfs:label "span end"@en ;
+    volipi:message "Tooltip for span end" ;
+    sh:name "span end" ;
+    sh:order 1.0 ;
+    sh:path g17raw:span_end .
+
+g17sn:property_1317 a sh:PropertyShape ;
+    rdfs:label "has label"@en ;
+    volipi:message "Tooltip for has label" ;
+    sh:class g17raw:label ;
+    sh:name "has label" ;
+    sh:node g17sn:label_1311 ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:has_label .
+
+g17sn:property_1318 a sh:PropertyShape ;
+    rdfs:label "entity"@en ;
+    volipi:message "Tooltip for entity" ;
+    sh:class grace:anything ;
+    sh:name "entity" ;
+    sh:node g17sn:ANYTHING ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:entity .
+
+g17sn:property_1319 a sh:PropertyShape ;
+    rdfs:label "belongs to entry"@en ;
+    volipi:message "Tooltip for belongs to entry" ;
+    sh:class grace:entry ;
+    sh:name "belongs to entry" ;
+    sh:node g17sn:ENTRY ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:belongs_to_entry .
+
+g17sn:property_1320 a sh:PropertyShape ;
+    rdfs:label "describes"@en ;
+    volipi:message "Tooltip for describes" ;
+    sh:class grace:event,
+        grace:object ;
+    sh:name "describes" ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class g17sn:EVENT ;
+                sh:node g17sn:EVENT ] [ sh:class g17sn:OBJECT ;
+                sh:node g17sn:OBJECT ] ) ;
+    sh:order 1.0 ;
+    sh:path g17raw:describes .
+
+g17sn:property_1321 a sh:PropertyShape ;
+    rdfs:label "has elements"@en ;
+    volipi:message "Tooltip for has elements" ;
+    sh:class g17raw:element ;
+    sh:name "has elements" ;
+    sh:node g17sn:element_1310 ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:has_elements .
+
+g17sn:property_1323 a sh:PropertyShape ;
+    rdfs:label "has class"@en ;
+    volipi:message "Tooltip for has class" ;
+    sh:name "has class" ;
+    sh:order 1.0 ;
+    sh:path g17raw:has_class .
+
+g17sn:property_1324 a sh:PropertyShape ;
+    rdfs:label "credited"@en ;
+    volipi:message "Tooltip for credited" ;
+    sh:class grace:credit ;
+    sh:name "credited" ;
+    sh:node g17sn:CREDIT ;
+    sh:nodeKind sh:IRI ;
+    sh:path g17raw:credited .
+
+g17sn:property_1325 a sh:PropertyShape ;
+    rdfs:label "in vicariate"@en ;
+    volipi:message "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific apostolic vicariate, denoting administrative and geographical affiliation." ;
+    sh:class grace:institution ;
+    sh:description "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific apostolic vicariate, denoting administrative and geographical affiliation." ;
+    sh:name "in vicariate" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:in_vicariate .
+
+g17sn:property_1341 a sh:PropertyShape ;
+    rdfs:label "biography subject"@en ;
+    volipi:message "A term used to describe the subject of a biographical event." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A term used to describe the subject of a biographical event." ;
+    sh:name "biography subject" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:biography_subject .
+
+g17sn:property_1343 a sh:PropertyShape ;
+    rdfs:label "participates in"@en ;
+    volipi:message "Tooltip for participates in" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:event ;
+    sh:name "participates in" ;
+    sh:node g17sn:EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:participates_in .
+
+g17sn:property_1344 a sh:PropertyShape ;
+    rdfs:label "biography event"@en ;
+    volipi:message "Tooltip for biography event" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:biographical_event ;
+    sh:name "experienced" ;
+    sh:node g17sn:BIOGRAPHICAL_EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:biography_event .
+
+g17sn:property_1345 a sh:PropertyShape ;
+    rdfs:label "grace stakeholder"@en ;
+    volipi:message "participant in an event of papal grace" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:papal_grace ;
+    sh:description "participant in an event of papal grace" ;
+    sh:name "grace stakeholder" ;
+    sh:node g17sn:PAPAL_GRACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:grace_stakeholder .
+
+g17sn:property_1346 a sh:PropertyShape ;
+    rdfs:label "falls within custom"@en ;
+    volipi:message "Tooltip for falls within custom" ;
+    sh:class grace:place ;
+    sh:name "falls within custom" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:falls_within_custom .
+
+g17sn:property_1347 a sh:PropertyShape ;
+    rdfs:label "falls within calculated"@en ;
+    volipi:message "Tooltip for falls within calculated" ;
+    sh:class grace:place ;
+    sh:name "falls within calculated" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:falls_within_calculated .
+
+g17sn:property_1352 a sh:PropertyShape ;
+    rdfs:label "holds office"@en ;
+    volipi:message "the position or office held by a person in a biographical event" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "the position or office held by a person in a biographical event" ;
+    sh:name "holds office" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:holds_office .
+
+g17sn:property_1364 a sh:PropertyShape ;
+    rdfs:label "expedition date"@en ;
+    volipi:message "The date on which a provision, appointment, or assignment to an ecclesiastical office was made, crucial for historical records and legal documentation." ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:date ;
+    sh:description "The date on which a provision, appointment, or assignment to an ecclesiastical office was made, crucial for historical records and legal documentation." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "expedition date" ;
+    sh:node g17sn:DATE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:path grace:expedition_date .
+
+g17sn:property_1387 a sh:PropertyShape ;
+    rdfs:label "object held by institution"@en ;
+    volipi:message "returns immaterial object held by an institition (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:object ;
+    sh:description "returns immaterial object held by an institition" ;
+    sh:name "object held by institution" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( [ sh:inversePath grace:pertains_to ] [ sh:zeroOrMorePath grace:object_related_to_object ] ) .
+
+g17sn:property_1388 a sh:PropertyShape ;
+    rdfs:label "has territory"@en ;
+    volipi:message "Tooltip for has territory" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution_territory ;
+    sh:name "has territory" ;
+    sh:node g17sn:INSTITUTION_TERRITORY ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:has_territory .
+
+g17sn:property_152 a sh:PropertyShape ;
+    rdfs:label "deceased in Rome"@en ;
+    volipi:message "Designation for someone who has died in Rome, often used in ecclesiastical records to denote the significant passing of church figures in the Vatican's vicinity." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "Designation for someone who has died in Rome, often used in ecclesiastical records to denote the significant passing of church figures in the Vatican's vicinity." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "deceased in Rome" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:path grace:deceased_in_rome .
+
+g17sn:property_153 a sh:PropertyShape ;
+    rdfs:label "care of souls"@en ;
+    volipi:message "A term indicating an ecclesiastical duty or office that involves the pastoral care and spiritual welfare of the church's parishioners." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A term indicating an ecclesiastical duty or office that involves the pastoral care and spiritual welfare of the church's parishioners." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "care of souls" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:care_of_souls .
+
+g17sn:property_154 a sh:PropertyShape ;
+    rdfs:label "benefice category"@en ;
+    volipi:message "A classification used to describe the type or status of a church benefice, reflecting its importance, revenue size, or administrative role within the church hierarchy." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A classification used to describe the type or status of a church benefice, reflecting its importance, revenue size, or administrative role within the church hierarchy." ;
+    sh:minCount 1 ;
+    sh:name "benefice category" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:benefice_category .
+
+g17sn:property_156 a sh:PropertyShape ;
+    rdfs:label "church category"@en ;
+    volipi:message "A term used to categorize a church according to its function, size, or liturgical status, such as cathedral, parish church, or chapel." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A term used to categorize a church according to its function, size, or liturgical status, such as cathedral, parish church, or chapel." ;
+    sh:name "church category" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:church_category .
+
+g17sn:property_157 a sh:PropertyShape ;
+    rdfs:label "vacancy category"@en ;
+    volipi:message "A classification referring to the reason a church office or benefice is vacant, such as due to resignation, death, or transfer of the previous holder." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A classification referring to the reason a church office or benefice is vacant, such as due to resignation, death, or transfer of the previous holder." ;
+    sh:name "vacancy category" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:vacancy_category .
+
+g17sn:property_158 a sh:PropertyShape ;
+    rdfs:label "provision subform"@en ;
+    volipi:message "A specific category or form of ecclesiastical provision, detailing the process or conditions under which church offices or benefices are granted." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A specific category or form of ecclesiastical provision, detailing the process or conditions under which church offices or benefices are granted." ;
+    sh:name "provision subform" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:provision_subform .
+
+g17sn:property_162 a sh:PropertyShape ;
+    rdfs:label "regular benefice"@en ;
+    volipi:message "A designation for a church benefice that includes responsibilities for pastoral care, typically managed by members of a religious order following specific monastic rules." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A designation for a church benefice that includes responsibilities for pastoral care, typically managed by members of a religious order following specific monastic rules." ;
+    sh:name "regular benefice" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:regular_benefice .
+
+g17sn:property_164 a sh:PropertyShape ;
+    rdfs:label "source subregister"@en ;
+    volipi:message "A categorization within ecclesiastical record-keeping that organizes documents or data according to the source or origin of the information, often used for administrative clarity." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A categorization within ecclesiastical record-keeping that organizes documents or data according to the source or origin of the information, often used for administrative clarity." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "source subregister" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:source_subregister .
+
+g17sn:property_165 a sh:PropertyShape ;
+    rdfs:label "benefice taxation"@en ;
+    volipi:message "The assessment or assignment of financial value to a benefice, indicating the income or revenue it generates, typically for taxation or financial management purposes within the church." ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:monetary_value ;
+    sh:description "The assessment or assignment of financial value to a benefice, indicating the income or revenue it generates, typically for taxation or financial management purposes within the church." ;
+    sh:name "benefice taxation" ;
+    sh:node g17sn:MONETARY_VALUE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:path grace:benefice_taxation .
+
+g17sn:property_166 a sh:PropertyShape ;
+    rdfs:label "provision type"@en ;
+    volipi:message "A classification that describes the method or conditions under which a benefice or ecclesiastical position is provided, reflecting various canonical and administrative procedures." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A classification that describes the method or conditions under which a benefice or ecclesiastical position is provided, reflecting various canonical and administrative procedures." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "provision type" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:provision_type .
+
+g17sn:property_168 a sh:PropertyShape ;
+    rdfs:label "in diocese"@en ;
+    volipi:message "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific diocese, denoting administrative and geographical affiliation." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "A term indicating that a church or ecclesiastical office is located within the boundaries of a specific diocese, denoting administrative and geographical affiliation." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "in diocese" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_diocese .
+
+g17sn:property_169 a sh:PropertyShape ;
+    rdfs:label "in ecclesiastical province"@en ;
+    volipi:message "A designation for churches or ecclesiastical offices that are part of a larger ecclesiastical province, highlighting broader administrative structures and church governance." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:description "A designation for churches or ecclesiastical offices that are part of a larger ecclesiastical province, highlighting broader administrative structures and church governance." ;
+    sh:name "in ecclesiastical province" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:in_ecclesiastical_province .
+
+g17sn:property_173 a sh:PropertyShape ;
+    rdfs:label "refers to"@en ;
+    volipi:message "A wildcard property to find any direct entity relation" ;
+    sh:class grace:anything ;
+    sh:description "A wildcard property to find any direct entity relation" ;
+    sh:name "refers to" ;
+    sh:node g17sn:ANYTHING ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:refers_to .
+
+g17sn:property_174 a sh:PropertyShape ;
+    rdfs:label "event described by entity"@en ;
+    volipi:message "Tooltip for event described by entity" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:description ;
+    sh:name "event described by entity" ;
+    sh:node g17sn:DESCRIPTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:event_described_by_entity .
+
+g17sn:property_175 a sh:PropertyShape ;
+    rdfs:label "event related to object"@en ;
+    volipi:message "Tooltip for event related to object" ;
+    sh:class grace:object ;
+    sh:name "event related to object" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:event_related_to_object .
+
+g17sn:property_176 a sh:PropertyShape ;
+    rdfs:label "object related to object"@en ;
+    volipi:message "Tooltip for object related to object" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:object ;
+    sh:name "linked to" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path ( [ sh:alternativePath ( grace:object_related_to_object [ sh:inversePath grace:object_related_to_object ] ) ] ) .
+
+g17sn:property_177 a sh:PropertyShape ;
+    rdfs:label "object described by entity"@en ;
+    volipi:message "Tooltip for object described by entity" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:description ;
+    sh:name "object described by entity" ;
+    sh:node g17sn:DESCRIPTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:object_described_by_entity .
+
+g17sn:property_179 a sh:PropertyShape ;
+    rdfs:label "has monetary value"@en ;
+    volipi:message "Tooltip for has monetary value" ;
+    sh:class grace:monetary_value ;
+    sh:name "has monetary value" ;
+    sh:node g17sn:MONETARY_VALUE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:has_monetary_value .
+
+g17sn:property_180 a sh:PropertyShape ;
+    rdfs:label "currency"@en ;
+    volipi:message "The currency of a monetary value" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "The currency of a monetary value" ;
+    sh:name "currency" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:currency .
+
+g17sn:property_182 a sh:PropertyShape ;
+    rdfs:label "pension value"@en ;
+    volipi:message "The specific monetary amount assigned as a pension to a cleric or church official, reflecting ongoing financial support typically derived from church revenues." ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:monetary_value ;
+    sh:description "The specific monetary amount assigned as a pension to a cleric or church official, reflecting ongoing financial support typically derived from church revenues." ;
+    sh:name "pension value" ;
+    sh:node g17sn:MONETARY_VALUE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 5.0 ;
+    sh:path grace:pension_value .
+
+g17sn:property_328 a sh:PropertyShape ;
+    rdfs:label "WikiData"@en ;
+    volipi:message "Tooltip for WikiData" ;
+    sh:class g17sn:URI ;
+    sh:name "WikiData" ;
+    sh:node g17sn:uri_1359 ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:wikidata .
+
+g17sn:property_458 a sh:PropertyShape ;
+    rdfs:label "EarthWorks"@en ;
+    volipi:message "Polygons of the boundaries of ca. 750 dioceses across Latin Christendom as they appeared between 1200-1500. Rather than corresponding to any particular year, the map is an amalgam that displays all Latin dioceses that existed at some point during this period. The map excludes dioceses in the Latin East and in parts of eastern Europe whose boundaries are unknown (or were never established)." ;
+    sh:class g17sn:URI ;
+    sh:description "Polygons of the boundaries of ca. 750 dioceses across Latin Christendom as they appeared between 1200-1500. Rather than corresponding to any particular year, the map is an amalgam that displays all Latin dioceses that existed at some point during this period. The map excludes dioceses in the Latin East and in parts of eastern Europe whose boundaries are unknown (or were never established)." ;
+    sh:name "EarthWorks" ;
+    sh:node g17sn:uri_1359 ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:earthworks .
+
+g17sn:property_459 a sh:PropertyShape ;
+    rdfs:label "type of object"@en ;
+    volipi:message "The primary type of an object" ;
+    sh:class grace:type ;
+    sh:description "The primary type of an object" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of object" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_object .
+
+g17sn:property_466 a sh:PropertyShape ;
+    rdfs:label "dedication scope"@en ;
+    volipi:message "The entity or compound this dedication extends to" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "The entity or compound this dedication extends to" ;
+    sh:name "dedication scope" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:dedication_scope .
+
+g17sn:property_479 a sh:PropertyShape ;
+    rdfs:label "type of dedication"@en ;
+    volipi:message "The primary type of a dedication" ;
+    sh:class grace:type ;
+    sh:description "The primary type of a dedication" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of dedication" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_dedication .
+
+g17sn:property_53 a sh:PropertyShape ;
+    rdfs:label "type of event"@en ;
+    volipi:message "The primary type of an event" ;
+    sh:class grace:type ;
+    sh:description "The primary type of an event" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of event" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_event .
+
+g17sn:property_58 a sh:PropertyShape ;
+    rdfs:label "type of place"@en ;
+    volipi:message "The primary type of a place" ;
+    sh:class grace:type ;
+    sh:description "The primary type of a place" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of place" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_place .
+
+g17sn:property_59 a sh:PropertyShape ;
+    rdfs:label "type of person"@en ;
+    volipi:message "The primary type of a person" ;
+    sh:class grace:type ;
+    sh:description "The primary type of a person" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of person" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_person .
+
+g17sn:property_63 a sh:PropertyShape ;
+    rdfs:label "type of institution"@en ;
+    volipi:message "The primary type of an institution" ;
+    sh:class grace:type ;
+    sh:description "The primary type of an institution" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "type of institution" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_of_institution .
+
+g17sn:property_67 a sh:PropertyShape ;
+    rdfs:label "has participant"@en ;
+    volipi:message "Tooltip for has participant" ;
+    sh:class grace:person ;
+    sh:name "has participant" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:has_participant .
+
+g17sn:property_68 a sh:PropertyShape ;
+    rdfs:label "providee"@en ;
+    volipi:message "A term used to describe someone who has received a benefit, office, or provision from an ecclesiastical authority." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A term used to describe someone who has received a benefit, office, or provision from an ecclesiastical authority." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "providee" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:providee .
+
+g17sn:property_728 a sh:PropertyShape ;
+    rdfs:label "disambiguation of a location of an institution"@en ;
+    volipi:message "An event or process where the specific location of an institution is clarified or identified to resolve ambiguities, often within church documents or records." ;
+    sh:class grace:place ;
+    sh:description "An event or process where the specific location of an institution is clarified or identified to resolve ambiguities, often within church documents or records." ;
+    sh:name "disambiguation of a location of an institution" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:disambiguation_of_a_location_of_an_institution .
+
+g17sn:property_740 a sh:PropertyShape ;
+    rdfs:label "place information within church name"@en ;
+    volipi:message "An event where specific information about a church or ecclesiastical institution's location is officially recorded or clarified, often for legal or administrative purposes." ;
+    sh:class grace:place ;
+    sh:description "An event where specific information about a church or ecclesiastical institution's location is officially recorded or clarified, often for legal or administrative purposes." ;
+    sh:name "place information within church name" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:path grace:place_information_within_church_name .
+
+g17sn:property_79 a sh:PropertyShape ;
+    rdfs:label "place of event"@en ;
+    volipi:message "The specific location where an event occured or was registered." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:description "The specific location where an event occured or was registered." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "place of event" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:path grace:place_of_event .
+
+g17sn:property_80 a sh:PropertyShape ;
+    rdfs:label "location of an institution"@en ;
+    volipi:message "The specific place where an institution is based, often important for legal, administrative, or operational purposes." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:description "The specific place where an institution is based, often important for legal, administrative, or operational purposes." ;
+    sh:name "location of an institution" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 3.0 ;
+    sh:path grace:location_of_an_institution .
+
+g17sn:property_81 a sh:PropertyShape ;
+    rdfs:label "birth place"@en ;
+    volipi:message "The specific place where an individual was born, important for legal, genealogical, or historical records." ;
+    sh:class grace:place ;
+    sh:description "The specific place where an individual was born, important for legal, genealogical, or historical records." ;
+    sh:name "birth place" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:birth_place .
+
+g17sn:property_854 a sh:PropertyShape ;
+    rdfs:label "uuid5"@en ;
+    volipi:message "A UUID5 generated from the cool IRI" ;
+    sh:datatype g17sn:appellation ;
+    sh:description "A UUID5 generated from the cool IRI" ;
+    sh:name "uuid5" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 2.0 ;
+    sh:path grace:uuid5 .
+
+g17sn:property_855 a sh:PropertyShape ;
+    rdfs:label "record id"@en ;
+    volipi:message "An internal integer ID" ;
+    dash:searchWidget sparnatural:NumberProperty ;
+    sh:description "An internal integer ID" ;
+    sh:name "record id" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:number ;
+                sh:node g17sn:number_1155 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:record_id .
+
+g17sn:property_856 a sh:PropertyShape ;
+    rdfs:label "cool id"@en ;
+    volipi:message "Tooltip for cool id" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "cool id" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:cool_id .
+
+g17sn:property_857 a sh:PropertyShape ;
+    rdfs:label "called"@en ;
+    sparnatural:enableOptional false ;
+    volipi:message "A primary name of a resource" ;
+    dash:propertyRole dash:LabelRole ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:description "A primary name of a resource" ;
+    sh:name "called" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 2.0 ;
+    sh:path grace:called .
+
+g17sn:property_858 a sh:PropertyShape ;
+    rdfs:label "also called"@en ;
+    volipi:message "Tooltip for also called" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "also called" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 2.0 ;
+    sh:path grace:also_called .
+
+g17sn:property_859 a sh:PropertyShape ;
+    rdfs:label "aka"@en ;
+    volipi:message "Tooltip for aka" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "aka" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 2.0 ;
+    sh:path grace:aka .
+
+g17sn:property_864 a sh:PropertyShape ;
+    rdfs:label "money literal"@en ;
+    volipi:message "the modality of a monetary interest, payment, or obligation" ;
+    sh:description "the modality of a monetary interest, payment, or obligation" ;
+    sh:name "money literal" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:number ;
+                sh:node g17sn:number_1155 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:path grace:money_literal .
+
+g17sn:property_865 a sh:PropertyShape ;
+    rdfs:label "fixed amount"@en ;
+    volipi:message "Tooltip for fixed amount" ;
+    dash:searchWidget sparnatural:NumberProperty ;
+    sh:name "fixed amount" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:number ;
+                sh:node g17sn:number_1155 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:fixed_amount .
+
+g17sn:property_866 a sh:PropertyShape ;
+    rdfs:label "floating amount"@en ;
+    volipi:message "Tooltip for floating amount" ;
+    dash:searchWidget sparnatural:NumberProperty ;
+    sh:name "floating amount" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:number ;
+                sh:node g17sn:number_1155 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:floating_amount .
+
+g17sn:property_867 a sh:PropertyShape ;
+    rdfs:label "person literal"@en ;
+    volipi:message "Tooltip for person literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "person literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:person_literal .
+
+g17sn:property_868 a sh:PropertyShape ;
+    rdfs:label "given name"@en ;
+    volipi:message "Tooltip for given name" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "given name" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:given_name .
+
+g17sn:property_869 a sh:PropertyShape ;
+    rdfs:label "family name"@en ;
+    volipi:message "Tooltip for family name" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "family name" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:family_name .
+
+g17sn:property_870 a sh:PropertyShape ;
+    rdfs:label "date literal"@en ;
+    volipi:message "Tooltip for date literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "date literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:date_literal .
+
+g17sn:property_871 a sh:PropertyShape ;
+    rdfs:label "started"@en ;
+    volipi:message "Tooltip for started" ;
+    dash:searchWidget sparnatural:TimeProperty-Date ;
+    sh:name "started" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:date_value ;
+                sh:node g17sn:date_value_1157 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:started .
+
+g17sn:property_872 a sh:PropertyShape ;
+    rdfs:label "ended"@en ;
+    volipi:message "Tooltip for ended" ;
+    dash:searchWidget sparnatural:TimeProperty-Date ;
+    sh:name "ended" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:date_value ;
+                sh:node g17sn:date_value_1157 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:ended .
+
+g17sn:property_873 a sh:PropertyShape ;
+    rdfs:label "reference date"@en ;
+    volipi:message "Tooltip for reference date" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "reference date" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:reference_date .
+
+g17sn:property_874 a sh:PropertyShape ;
+    rdfs:label "relative to"@en ;
+    volipi:message "Tooltip for relative to" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "relative to" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:relative_to .
+
+g17sn:property_875 a sh:PropertyShape ;
+    rdfs:label "context explanation"@en ;
+    volipi:message "Tooltip for context explanation" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "context explanation" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:context_explanation .
+
+g17sn:property_878 a sh:PropertyShape ;
+    rdfs:label "entry literal"@en ;
+    volipi:message "Tooltip for entry literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "entry literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:entry_literal .
+
+g17sn:property_879 a sh:PropertyShape ;
+    rdfs:label "transcription"@en ;
+    volipi:message "Tooltip for transcription" ;
+    sh:name "transcription" ;
+    sh:order 1.0 ;
+    sh:path g17raw:transcription .
+
+g17sn:property_880 a sh:PropertyShape ;
+    rdfs:label "folio"@en ;
+    volipi:message "Tooltip for folio" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:datatype g17sn:appellation ;
+    sh:name "folio" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:folio .
+
+g17sn:property_882 a sh:PropertyShape ;
+    rdfs:label "in source"@en ;
+    volipi:message "Tooltip for in source" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:source ;
+    sh:name "in source" ;
+    sh:node g17sn:SOURCE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_source .
+
+g17sn:property_883 a sh:PropertyShape ;
+    rdfs:label "archive literal"@en ;
+    volipi:message "Tooltip for archive literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "archive literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:archive_literal .
+
+g17sn:property_885 a sh:PropertyShape ;
+    rdfs:label "abbreviated name"@en ;
+    volipi:message "Tooltip for abbreviated name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "abbreviated name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:abbreviated_name .
+
+g17sn:property_886 a sh:PropertyShape ;
+    rdfs:label "archive name"@en ;
+    volipi:message "Tooltip for archive name" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "archive name" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:archive_name .
+
+g17sn:property_892 a sh:PropertyShape ;
+    rdfs:label "type literal"@en ;
+    volipi:message "Tooltip for type literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "type literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:type_literal .
+
+g17sn:property_893 a sh:PropertyShape ;
+    rdfs:label "type name"@en ;
+    volipi:message "Tooltip for type name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "type name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:type_name .
+
+g17sn:property_894 a sh:PropertyShape ;
+    rdfs:label "ranking"@en ;
+    volipi:message "Tooltip for ranking" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "ranking" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:ranking .
+
+g17sn:property_895 a sh:PropertyShape ;
+    rdfs:label "narrower"@en ;
+    volipi:message "Tooltip for narrower (transitive property)" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "narrower" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:narrower ] .
+
+g17sn:property_896 a sh:PropertyShape ;
+    rdfs:label "broader"@en ;
+    volipi:message "Tooltip for broader (transitive property)" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:name "broader" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:broader ] .
+
+g17sn:property_897 a sh:PropertyShape ;
+    rdfs:label "in thesaurus"@en ;
+    volipi:message "Tooltip for in thesaurus" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:thesaurus ;
+    sh:name "in thesaurus" ;
+    sh:node g17sn:THESAURUS ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_thesaurus .
+
+g17sn:property_899 a sh:PropertyShape ;
+    rdfs:label "appellation literal"@en ;
+    volipi:message "Tooltip for appellation literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "appellation literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:appellation_literal .
+
+g17sn:property_900 a sh:PropertyShape ;
+    rdfs:label "identifier literal"@en ;
+    volipi:message "Tooltip for identifier literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "identifier literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:identifier_literal .
+
+g17sn:property_915 a sh:PropertyShape ;
+    rdfs:label "LOD"@en ;
+    volipi:message "Tooltip for LOD" ;
+    sh:class g17sn:URI ;
+    sh:name "LOD" ;
+    sh:node g17sn:uri_1359 ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:lod .
+
+g17sn:property_916 a sh:PropertyShape ;
+    rdfs:label "has id"@en ;
+    volipi:message "Tooltip for has id" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "has id" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:has_id .
+
+g17sn:property_925 a sh:PropertyShape ;
+    rdfs:label "schema literal"@en ;
+    volipi:message "Tooltip for schema literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "schema literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:schema_literal .
+
+g17sn:property_927 a sh:PropertyShape ;
+    rdfs:label "schema name"@en ;
+    volipi:message "Tooltip for schema name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "schema name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:schema_name .
+
+g17sn:property_93 a sh:PropertyShape ;
+    rdfs:label "monetary value normalized"@en ;
+    volipi:message "A normalized representation of a monetary values" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A normalized representation of a monetary values" ;
+    sh:name "monetary value normalized" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:monetary_value_normalized .
+
+g17sn:property_937 a sh:PropertyShape ;
+    rdfs:label "contributor name"@en ;
+    volipi:message "Tooltip for contributor name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "contributor name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:contributor_name .
+
+g17sn:property_939 a sh:PropertyShape ;
+    rdfs:label "type note"@en ;
+    volipi:message "Tooltip for type note" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "type note" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:type_note .
+
+g17sn:property_947 a sh:PropertyShape ;
+    rdfs:label "identifies"@en ;
+    volipi:message "Tooltip for identifies" ;
+    sh:class grace:anything ;
+    sh:name "identifies" ;
+    sh:node g17sn:ANYTHING ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:identifies .
+
+g17sn:property_948 a sh:PropertyShape ;
+    rdfs:label "regards"@en ;
+    volipi:message "Tooltip for regards" ;
+    sh:class grace:type ;
+    sh:name "regards" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:regards .
+
+g17sn:property_95 a sh:PropertyShape ;
+    rdfs:label "vacancy date"@en ;
+    volipi:message "The specific date when an ecclesiastical office or benefice became vacant, important for administrative records and subsequent appointment processes." ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:date ;
+    sh:description "The specific date when an ecclesiastical office or benefice became vacant, important for administrative records and subsequent appointment processes." ;
+    sh:name "vacancy date" ;
+    sh:node g17sn:DATE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:vacancy_date .
+
+g17sn:property_951 a sh:PropertyShape ;
+    rdfs:label "place literal"@en ;
+    volipi:message "Tooltip for place literal" ;
+    sh:name "place literal" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:path grace:place_literal .
+
+g17sn:property_953 a sh:PropertyShape ;
+    rdfs:label "place name"@en ;
+    volipi:message "Tooltip for place name" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "place name" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:place_name .
+
+g17sn:property_954 a sh:PropertyShape ;
+    rdfs:label "falls within"@en ;
+    volipi:message "Tooltip for falls within (transitive property)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:name "falls within" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:falls_within ] .
+
+g17sn:property_955 a sh:PropertyShape ;
+    rdfs:label "contains"@en ;
+    volipi:message "Tooltip for contains (transitive property)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:name "contains" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:contains ] .
+
+g17sn:property_959 a sh:PropertyShape ;
+    rdfs:label "full name"@en ;
+    volipi:message "Tooltip for full name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "full name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:full_name .
+
+g17sn:property_96 a sh:PropertyShape ;
+    rdfs:label "event date"@en ;
+    volipi:message "The date on which a provision, appointment, or assignment to an ecclesiastical office was made, crucial for historical records and legal documentation." ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:date ;
+    sh:description "The date on which a provision, appointment, or assignment to an ecclesiastical office was made, crucial for historical records and legal documentation." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "event date" ;
+    sh:node g17sn:DATE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:event_date .
+
+g17sn:property_960 a sh:PropertyShape ;
+    rdfs:label "dedication literal"@en ;
+    volipi:message "Tooltip for dedication literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "dedication literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:dedication_literal .
+
+g17sn:property_961 a sh:PropertyShape ;
+    rdfs:label "title"@en ;
+    volipi:message "Tooltip for title" ;
+    dash:searchWidget sparnatural:SearchProperty ;
+    sh:name "title" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:name ;
+                sh:node g17sn:name_1156 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:title .
+
+g17sn:property_962 a sh:PropertyShape ;
+    rdfs:label "related to saint"@en ;
+    volipi:message "Tooltip for related to saint" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:dedication ;
+    sh:name "related to saint" ;
+    sh:node g17sn:DEDICATION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:related_to_saint .
+
+g17sn:property_963 a sh:PropertyShape ;
+    rdfs:label "source literal"@en ;
+    volipi:message "Tooltip for source literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "source literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:source_literal .
+
+g17sn:property_964 a sh:PropertyShape ;
+    rdfs:label "in archive"@en ;
+    volipi:message "Tooltip for in archive" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:archive ;
+    sh:name "in archive" ;
+    sh:node g17sn:ARCHIVE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:in_archive .
+
+g17sn:property_966 a sh:PropertyShape ;
+    rdfs:label "shelf mark"@en ;
+    volipi:message "Tooltip for shelf mark" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "shelf mark" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:shelf_mark .
+
+g17sn:property_967 a sh:PropertyShape ;
+    rdfs:label "dimensions"@en ;
+    volipi:message "Tooltip for dimensions" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "dimensions" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:dimensions .
+
+g17sn:property_968 a sh:PropertyShape ;
+    rdfs:label "institution literal"@en ;
+    volipi:message "Tooltip for institution literal" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "institution literal" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:path grace:institution_literal .
+
+g17sn:property_969 a sh:PropertyShape ;
+    rdfs:label "institution name"@en ;
+    volipi:message "Tooltip for institution name" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "institution name" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:institution_name .
+
+g17sn:property_97 a sh:PropertyShape ;
+    rdfs:label "former possessor"@en ;
+    volipi:message "A term used to describe an individual who previously held a benefice or position, important in contexts involving inheritance, legal disputes, or historical records." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A term used to describe an individual who previously held a benefice or position, important in contexts involving inheritance, legal disputes, or historical records." ;
+    sh:name "former possessor" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:former_possessor .
+
+g17sn:property_970 a sh:PropertyShape ;
+    rdfs:label "primary place"@en ;
+    volipi:message "Tooltip for primary place" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:place ;
+    sh:name "primary place" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:primary_place .
+
+g17sn:property_972 a sh:PropertyShape ;
+    rdfs:label "under jurisdiction"@en ;
+    volipi:message "Tooltip for under jurisdiction (transitive property)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "under jurisdiction" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:under_jurisdiction ] .
+
+g17sn:property_973 a sh:PropertyShape ;
+    rdfs:label "governs"@en ;
+    volipi:message "Tooltip for governs (transitive property)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "governs" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path [ sh:oneOrMorePath grace:governs ] .
+
+g17sn:property_98 a sh:PropertyShape ;
+    rdfs:label "current possessor"@en ;
+    volipi:message "A term used to describe an individual who currently holds a benefice or position, relevant in administrative, legal, and ecclesiastical contexts." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A term used to describe an individual who currently holds a benefice or position, relevant in administrative, legal, and ecclesiastical contexts." ;
+    sh:name "current possessor" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:current_possessor .
+
+g17sn:property_985 a sh:PropertyShape ;
+    rdfs:label "transcription preview"@en ;
+    volipi:message "Tooltip for transcription preview" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "transcription preview" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:transcription_preview .
+
+g17sn:property_986 a sh:PropertyShape ;
+    rdfs:label "testifies to"@en ;
+    volipi:message "A characteristic of a record or document indicating that it serves as evidence or confirmation of an event, fact, or status." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:event,
+        grace:object ;
+    sh:description "A characteristic of a record or document indicating that it serves as evidence or confirmation of an event, fact, or status." ;
+    sh:name "testifies to" ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class g17sn:EVENT ;
+                sh:node g17sn:EVENT ] [ sh:class g17sn:OBJECT ;
+                sh:node g17sn:OBJECT ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:testifies_to .
+
+g17sn:property_99 a sh:PropertyShape ;
+    rdfs:label "cardinal with indult"@en ;
+    volipi:message "A cardinal who has been granted an indult, which is a special permission or privilege, typically for a specific purpose outside the usual norms of ecclesiastical law." ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:person ;
+    sh:description "A cardinal who has been granted an indult, which is a special permission or privilege, typically for a specific purpose outside the usual norms of ecclesiastical law." ;
+    sh:name "cardinal with indult" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:cardinal_with_indult .
+
+g17sn:IDENTIFIER a sh:NodeShape ;
+    rdfs:label "identifier"@en ;
+    volipi:iconName "fa-solid fa-fingerprint" ;
+    volipi:message "Tooltip for identifier" ;
+    sh:name "identifier" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 50.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1179 ;
+    sh:targetClass grace:identifier .
+
+g17sn:THESAURUS a sh:NodeShape ;
+    rdfs:label "thesaurus"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "Tooltip for thesaurus" ;
+    sh:name "thesaurus" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:targetClass grace:thesaurus .
+
+g17sn:element_1310 a sh:NodeShape ;
+    rdfs:label "element"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "Tooltip for element" ;
+    sh:name "element" ;
+    sh:nodeKind sh:IRI ;
+    sh:property g17sn:property_1314,
+        g17sn:property_1315,
+        g17sn:property_1316,
+        g17sn:property_1317,
+        g17sn:property_1318,
+        g17sn:property_1319,
+        g17sn:property_1320 ;
+    sh:targetClass g17raw:element .
+
+g17sn:property_1184 a sh:PropertyShape ;
+    rdfs:label "date object"@en ;
+    volipi:message "Tooltip for date object" ;
+    sh:name "date object" ;
+    sh:node g17sn:DATE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:date_object .
+
+g17sn:property_1269 a sh:PropertyShape ;
+    rdfs:label "archive object"@en ;
+    volipi:message "Tooltip for archive object" ;
+    sh:class grace:archive ;
+    sh:name "archive object" ;
+    sh:node g17sn:ARCHIVE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:archive_object .
+
+g17sn:property_1301 a sh:PropertyShape ;
+    rdfs:label "affiliated to institution"@en ;
+    volipi:message "Tooltip for affiliated to institution" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "affiliated to institution" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:affiliated_to_institution .
+
+g17sn:property_1322 a sh:PropertyShape ;
+    rdfs:label "is described by"@en ;
+    volipi:message "Tooltip for is described by" ;
+    sh:class g17raw:element ;
+    sh:name "is described by" ;
+    sh:node g17sn:element_1310 ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:is_described_by .
+
+g17sn:property_1421 a sh:PropertyShape ;
+    rdfs:label "in project"@en ;
+    volipi:message "Tooltip for in project" ;
+    sh:class g17raw:project ;
+    sh:name "in project" ;
+    sh:node g17sn:project_1420 ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path g17raw:in_project .
+
+g17sn:property_1422 a sh:PropertyShape ;
+    rdfs:label "feature labels"@en ;
+    volipi:message "Returns list of all type labels (ideal for concatenation) (This is only a query pattern)" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class g17sn:name ;
+    sh:description "Returns list of all type labels (ideal for concatenation)" ;
+    sh:name "feature labels" ;
+    sh:node g17sn:name_1156 ;
+    sh:nodeKind sh:IRI ;
+    sh:path ( [ sh:zeroOrMorePath [ sh:alternativePath ( grace:object_object grace:event_object ) ] ] grace:type_object grace:called ) .
+
+g17sn:property_151 a sh:PropertyShape ;
+    rdfs:label "type assigned"@en ;
+    volipi:message "Tooltip for type assigned" ;
+    sh:class grace:type ;
+    sh:name "type assigned" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:type_assigned .
+
+g17sn:property_159 a sh:PropertyShape ;
+    rdfs:label "benefice title"@en ;
+    volipi:message "A specific ecclesiastical name or title dedicated to a benefice, often reflecting its patron saint, founding figure, or primary function within the church community." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:dedication ;
+    sh:description "A specific ecclesiastical name or title dedicated to a benefice, often reflecting its patron saint, founding figure, or primary function within the church community." ;
+    sh:name "benefice title" ;
+    sh:node g17sn:DEDICATION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:path grace:benefice_title .
+
+g17sn:property_161 a sh:PropertyShape ;
+    rdfs:label "church title"@en ;
+    volipi:message "A specific name or title given to a church, often reflecting its dedication to a saint, historical significance, or geographical location." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:dedication ;
+    sh:description "A specific name or title given to a church, often reflecting its dedication to a saint, historical significance, or geographical location." ;
+    sh:name "church title" ;
+    sh:node g17sn:DEDICATION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 4.0 ;
+    sh:path grace:church_title .
+
+g17sn:property_167 a sh:PropertyShape ;
+    rdfs:label "pertains to"@en ;
+    volipi:message "Tooltip for pertains to" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:institution ;
+    sh:name "pertains to" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:pertains_to .
+
+g17sn:property_420 a sh:PropertyShape ;
+    rdfs:label "dedicated to"@en ;
+    volipi:message "dedication?" ;
+    sh:class grace:dedication ;
+    sh:description "dedication?" ;
+    sh:name "dedicated to" ;
+    sh:node g17sn:DEDICATION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:dedicated_to .
+
+g17sn:property_94 a sh:PropertyShape ;
+    rdfs:label "has time span"@en ;
+    volipi:message "what happened at this date?" ;
+    sh:class grace:date ;
+    sh:description "what happened at this date?" ;
+    sh:name "has time span" ;
+    sh:node g17sn:DATE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:has_time_span .
+
+g17sn:property_941 a sh:PropertyShape ;
+    rdfs:label "testified by"@en ;
+    volipi:message "Tooltip for testified by" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:entry ;
+    sh:name "testified by" ;
+    sh:node g17sn:ENTRY ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:testified_by .
+
+g17sn:property_944 a sh:PropertyShape ;
+    rdfs:label "has option"@en ;
+    volipi:message "Tooltip for has option" ;
+    dash:searchWidget sparnatural:AutocompleteProperty ;
+    sh:class grace:date,
+        grace:dedication,
+        grace:event,
+        grace:institution,
+        grace:monetary_value,
+        grace:object,
+        grace:person,
+        grace:place,
+        grace:type ;
+    sh:name "has option" ;
+    sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class g17sn:PERSON ;
+                sh:node g17sn:PERSON ] [ sh:class g17sn:EVENT ;
+                sh:node g17sn:EVENT ] [ sh:class g17sn:TYPE ;
+                sh:node g17sn:TYPE ] [ sh:class g17sn:PLACE ;
+                sh:node g17sn:PLACE ] [ sh:class g17sn:INSTITUTION ;
+                sh:node g17sn:INSTITUTION ] [ sh:class g17sn:DATE ;
+                sh:node g17sn:DATE ] [ sh:class g17sn:OBJECT ;
+                sh:node g17sn:OBJECT ] [ sh:class g17sn:MONETARY_VALUE ;
+                sh:node g17sn:MONETARY_VALUE ] [ sh:class g17sn:DEDICATION ;
+                sh:node g17sn:DEDICATION ] ) ;
+    sh:path grace:has_option .
+
+g17sn:property_946 a sh:PropertyShape ;
+    rdfs:label "described by entity"@en ;
+    volipi:message "Tooltip for described by entity" ;
+    dash:searchWidget sparnatural:NonSelectableProperty ;
+    sh:class grace:description ;
+    sh:name "described by entity" ;
+    sh:node g17sn:DESCRIPTION ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:described_by_entity .
+
+g17sn:property_949 a sh:PropertyShape ;
+    rdfs:label "confidence"@en ;
+    volipi:message "Tooltip for confidence" ;
+    sh:class grace:type ;
+    sh:name "confidence" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:confidence .
+
+g17sn:property_956 a sh:PropertyShape ;
+    rdfs:label "address"@en ;
+    volipi:message "Tooltip for address" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "address" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:address .
+
+g17sn:ARCHIVE a sh:NodeShape ;
+    rdfs:label "archive"@en ;
+    volipi:iconName "fa-solid fa-box-archive" ;
+    volipi:message "Tooltip for archive" ;
+    sh:name "archive" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 30.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1050,
+        g17sn:property_1164,
+        g17sn:property_1165,
+        g17sn:property_1179,
+        g17sn:property_1182,
+        g17sn:property_883,
+        g17sn:property_885,
+        g17sn:property_886,
+        g17sn:property_952,
+        g17sn:property_956 ;
+    sh:targetClass grace:archive .
+
+g17sn:DESCRIPTION a sh:NodeShape ;
+    rdfs:label "description"@en ;
+    volipi:iconName "fa-solid fa-file-alt" ;
+    volipi:message "https://cidoc-crm.org/Entity/e13-attribute-assignment/version-6.2.1" ;
+    sh:deactivated true ;
+    sh:description "https://cidoc-crm.org/Entity/e13-attribute-assignment/version-6.2.1" ;
+    sh:name "description" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 52.0 ;
+    sh:property g17sn:property_947,
+        g17sn:property_948,
+        g17sn:property_949 ;
+    sh:targetClass grace:description .
+
+g17sn:property_1159 a sh:PropertyShape ;
+    rdfs:label "insights"@en ;
+    volipi:message "properties from pre-calculated analytics" ;
+    sh:class g17raw:analysis ;
+    sh:description "properties from pre-calculated analytics" ;
+    sh:name "insights" ;
+    sh:node g17sn:analysis_1160 ;
+    sh:nodeKind sh:IRI ;
+    sh:path g17raw:insights .
+
+g17sn:property_1164 a sh:PropertyShape ;
+    rdfs:label "geometry"@en ;
+    volipi:message "Tooltip for geometry" ;
+    sh:datatype g17sn:appellation ;
+    sh:name "geometry" ;
+    sh:node g17sn:appellation_898 ;
+    sh:nodeKind sh:Literal ;
+    sh:order 1.0 ;
+    sh:path grace:geometry .
+
+g17sn:property_1178 a sh:PropertyShape ;
+    rdfs:label "entry object"@en ;
+    volipi:message "Tooltip for entry object" ;
+    sh:class grace:entry ;
+    sh:name "entry object" ;
+    sh:node g17sn:ENTRY ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:entry_object .
+
+g17sn:property_1181 a sh:PropertyShape ;
+    rdfs:label "dedication object"@en ;
+    volipi:message "Tooltip for dedication object" ;
+    sh:class grace:dedication ;
+    sh:name "dedication object" ;
+    sh:node g17sn:DEDICATION ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:dedication_object .
+
+g17sn:property_1182 a sh:PropertyShape ;
+    rdfs:label "source object"@en ;
+    volipi:message "Tooltip for source object" ;
+    sh:class grace:source ;
+    sh:name "source object" ;
+    sh:node g17sn:SOURCE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:source_object .
+
+g17sn:property_1186 a sh:PropertyShape ;
+    rdfs:label "money object"@en ;
+    volipi:message "the modality of a monetary interest, payment, or obligation" ;
+    sh:description "the modality of a monetary interest, payment, or obligation" ;
+    sh:name "money object" ;
+    sh:node g17sn:MONETARY_VALUE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:money_object .
+
+g17sn:property_163 a sh:PropertyShape ;
+    rdfs:label "religious order"@en ;
+    volipi:message "A religious order is a community of individuals in a faith tradition, typically within Christianity, who commit to a common spiritual purpose and lifestyle under specific vows, such as poverty, chastity, and obedience. Members dedicate their lives to prayer, service, and sometimes particular missions like education, healthcare, or charity. Religious orders are often guided by a founder’s rule, such as the Rule of St. Benedict for Benedictines, and they operate within broader Church structures." ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:description "A religious order is a community of individuals in a faith tradition, typically within Christianity, who commit to a common spiritual purpose and lifestyle under specific vows, such as poverty, chastity, and obedience. Members dedicate their lives to prayer, service, and sometimes particular missions like education, healthcare, or charity. Religious orders are often guided by a founder’s rule, such as the Rule of St. Benedict for Benedictines, and they operate within broader Church structures." ;
+    sh:name "religious order" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 2.0 ;
+    sh:path grace:religious_order .
+
+g17sn:property_464 a sh:PropertyShape ;
+    rdfs:label "structured by"@en ;
+    volipi:message "Tooltip for structured by" ;
+    sh:class grace:type ;
+    sh:name "structured by" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:structured_by .
+
+g17sn:property_952 a sh:PropertyShape ;
+    rdfs:label "wkt"@en ;
+    volipi:message "Tooltip for wkt" ;
+    dash:searchWidget sparnatural:MapProperty ;
+    sh:name "located at" ;
+    sh:or ( [ sh:datatype g17sn:appellation ;
+                sh:node g17sn:appellation_898 ;
+                sh:nodeKind sh:Literal ] [ sh:datatype g17sn:map ;
+                sh:node g17sn:map_1053 ;
+                sh:nodeKind sh:Literal ] ) ;
+    sh:order 1.0 ;
+    sh:path grace:wkt .
+
+g17sn:ANYTHING a sh:NodeShape ;
+    rdfs:label "anything"@en ;
+    volipi:iconName "fa-solid fa-question" ;
+    volipi:message "any named resource in the knowledge base" ;
+    sh:description "any named resource in the knowledge base" ;
+    sh:name "anything" ;
+    sh:nodeKind sh:IRI ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1049,
+        g17sn:property_1052,
+        g17sn:property_1092,
+        g17sn:property_1094,
+        g17sn:property_1159,
+        g17sn:property_1178,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1181,
+        g17sn:property_1182,
+        g17sn:property_1183,
+        g17sn:property_1184,
+        g17sn:property_1185,
+        g17sn:property_1186,
+        g17sn:property_1206,
+        g17sn:property_1220,
+        g17sn:property_1269,
+        g17sn:property_1307,
+        g17sn:property_1324,
+        g17sn:property_173,
+        g17sn:property_328,
+        g17sn:property_458,
+        g17sn:property_854,
+        g17sn:property_855,
+        g17sn:property_856,
+        g17sn:property_857,
+        g17sn:property_858,
+        g17sn:property_859,
+        g17sn:property_899,
+        g17sn:property_900,
+        g17sn:property_915,
+        g17sn:property_916,
+        g17sn:property_917,
+        g17sn:property_919 ;
+    sh:targetClass grace:anything .
+
+g17sn:SOURCE a sh:NodeShape ;
+    rdfs:label "source"@en ;
+    volipi:iconName "fa-solid fa-book" ;
+    volipi:message "Tooltip for source" ;
+    sh:name "source" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 31.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1058,
+        g17sn:property_1166,
+        g17sn:property_1179,
+        g17sn:property_1269,
+        g17sn:property_1421,
+        g17sn:property_464,
+        g17sn:property_963,
+        g17sn:property_964,
+        g17sn:property_966,
+        g17sn:property_967 ;
+    sh:targetClass grace:source .
+
+g17sn:date_value_1157 a sh:NodeShape ;
+    rdfs:label "date value"@en ;
+    volipi:iconName "fa-solid fa-calendar-alt" ;
+    volipi:message "A search value for dates (This is only a query pattern)" ;
+    sh:description "A search value for dates" ;
+    sh:name "date value" ;
+    sh:nodeKind sh:Literal .
+
+g17sn:number_1155 a sh:NodeShape ;
+    rdfs:label "number"@en ;
+    volipi:iconName "fa-solid fa-hashtag" ;
+    volipi:message "A search value for numbers (This is only a query pattern)" ;
+    sh:description "A search value for numbers" ;
+    sh:name "number" ;
+    sh:nodeKind sh:Literal .
+
+g17sn:property_78 a sh:PropertyShape ;
+    rdfs:label "related to place"@en ;
+    volipi:message "what happened at this place" ;
+    sh:class grace:place ;
+    sh:description "what happened at this place" ;
+    sh:name "related to place" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:order 1.0 ;
+    sh:path grace:related_to_place .
+
+g17sn:property_919 a sh:PropertyShape ;
+    rdfs:label "object object"@en ;
+    volipi:message "Tooltip for object object" ;
+    sh:class grace:object ;
+    sh:name "object object" ;
+    sh:node g17sn:OBJECT ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:object_object .
+
+g17sn:uri_1359 a sh:NodeShape ;
+    rdfs:label "URI"@en ;
+    volipi:iconName "fa-solid fa-link" ;
+    volipi:message "A search value for names (This is only a query pattern)" ;
+    sh:description "A search value for names" ;
+    sh:name "URI" ;
+    sh:nodeKind sh:Literal .
+
+g17sn:ENTRY a sh:NodeShape ;
+    rdfs:label "entry"@en ;
+    volipi:iconName "fa-solid fa-pen-fancy" ;
+    volipi:message "Tooltip for entry" ;
+    sh:name "entry" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 33.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1104,
+        g17sn:property_1167,
+        g17sn:property_1179,
+        g17sn:property_1182,
+        g17sn:property_1321,
+        g17sn:property_1421,
+        g17sn:property_464,
+        g17sn:property_878,
+        g17sn:property_879,
+        g17sn:property_880,
+        g17sn:property_882,
+        g17sn:property_985,
+        g17sn:property_986 ;
+    sh:targetClass grace:entry .
+
+g17sn:property_1180 a sh:PropertyShape ;
+    rdfs:label "place object"@en ;
+    volipi:message "Tooltip for place object" ;
+    sh:class grace:place ;
+    sh:name "place object" ;
+    sh:node g17sn:PLACE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:place_object .
+
+g17sn:property_917 a sh:PropertyShape ;
+    rdfs:label "event object"@en ;
+    volipi:message "Tooltip for event object" ;
+    sh:class grace:event ;
+    sh:name "event object" ;
+    sh:node g17sn:EVENT ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:event_object .
+
+g17sn:MONETARY_VALUE a sh:NodeShape ;
+    rdfs:label "monetary value"@en ;
+    volipi:iconName "fa-solid fa-dollar-sign" ;
+    volipi:message "Tooltip for monetary value" ;
+    sh:name "monetary value" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 40.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1179,
+        g17sn:property_1183,
+        g17sn:property_180,
+        g17sn:property_864,
+        g17sn:property_865,
+        g17sn:property_866,
+        g17sn:property_93 ;
+    sh:targetClass grace:monetary_value .
+
+g17sn:DATE a sh:NodeShape ;
+    rdfs:label "date"@en ;
+    volipi:iconName "fa-solid fa-calendar-alt" ;
+    volipi:message "Tooltip for date" ;
+    sh:name "date" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 23.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1047,
+        g17sn:property_1179,
+        g17sn:property_1185,
+        g17sn:property_1299,
+        g17sn:property_870,
+        g17sn:property_871,
+        g17sn:property_872,
+        g17sn:property_873,
+        g17sn:property_874,
+        g17sn:property_875,
+        g17sn:property_917 ;
+    sh:targetClass grace:date .
+
+g17sn:property_1183 a sh:PropertyShape ;
+    rdfs:label "institution object"@en ;
+    volipi:message "Tooltip for institution object" ;
+    sh:class grace:institution ;
+    sh:name "institution object" ;
+    sh:node g17sn:INSTITUTION ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:institution_object .
+
+g17sn:property_1185 a sh:PropertyShape ;
+    rdfs:label "person object"@en ;
+    volipi:message "Tooltip for person object" ;
+    sh:class grace:person ;
+    sh:name "person object" ;
+    sh:node g17sn:PERSON ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:person_object .
+
+g17sn:DEDICATION a sh:NodeShape ;
+    rdfs:label "dedication"@en ;
+    volipi:iconName "fa-solid fa-heart" ;
+    volipi:message "to be discussed" ;
+    sh:description "to be discussed" ;
+    sh:name "dedication" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 41.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1011,
+        g17sn:property_1179,
+        g17sn:property_1183,
+        g17sn:property_1185,
+        g17sn:property_466,
+        g17sn:property_479,
+        g17sn:property_960,
+        g17sn:property_961,
+        g17sn:property_962 ;
+    sh:targetClass grace:dedication .
+
+g17sn:name_1156 a sh:NodeShape ;
+    rdfs:label "name"@en ;
+    volipi:iconName "fa-solid fa-quote-left" ;
+    volipi:message "A search value for names (This is only a query pattern)" ;
+    sh:description "A search value for names" ;
+    sh:name "name" ;
+    sh:nodeKind sh:Literal .
+
+g17sn:property_1009 a sh:PropertyShape ;
+    rdfs:label "has main type"@en ;
+    volipi:message "Tooltip for has main type" ;
+    dash:searchWidget sparnatural:ListProperty ;
+    sh:class grace:type ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "has main type" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:has_main_type .
+
+g17sn:property_1179 a sh:PropertyShape ;
+    rdfs:label "type object"@en ;
+    volipi:message "Tooltip for type object" ;
+    sh:class grace:type ;
+    sh:name "type object" ;
+    sh:node g17sn:TYPE ;
+    sh:nodeKind sh:IRI ;
+    sh:path grace:type_object .
+
+g17sn:EVENT a sh:NodeShape ;
+    rdfs:label "event"@en ;
+    volipi:iconName "fa-solid fa-calendar-day" ;
+    volipi:message "Tooltip for event" ;
+    sh:name "event" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 10.0 ;
+    sh:property g17sn:property_100,
+        g17sn:property_1009,
+        g17sn:property_101,
+        g17sn:property_102,
+        g17sn:property_103,
+        g17sn:property_1055,
+        g17sn:property_1060,
+        g17sn:property_1116,
+        g17sn:property_1117,
+        g17sn:property_1119,
+        g17sn:property_1122,
+        g17sn:property_1159,
+        g17sn:property_1178,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1183,
+        g17sn:property_1184,
+        g17sn:property_1185,
+        g17sn:property_1186,
+        g17sn:property_1195,
+        g17sn:property_1198,
+        g17sn:property_1322,
+        g17sn:property_1364,
+        g17sn:property_1422,
+        g17sn:property_151,
+        g17sn:property_152,
+        g17sn:property_157,
+        g17sn:property_158,
+        g17sn:property_164,
+        g17sn:property_165,
+        g17sn:property_166,
+        g17sn:property_167,
+        g17sn:property_174,
+        g17sn:property_175,
+        g17sn:property_179,
+        g17sn:property_182,
+        g17sn:property_464,
+        g17sn:property_53,
+        g17sn:property_67,
+        g17sn:property_68,
+        g17sn:property_78,
+        g17sn:property_79,
+        g17sn:property_917,
+        g17sn:property_919,
+        g17sn:property_94,
+        g17sn:property_941,
+        g17sn:property_944,
+        g17sn:property_946,
+        g17sn:property_95,
+        g17sn:property_96,
+        g17sn:property_97,
+        g17sn:property_98,
+        g17sn:property_99 ;
+    sh:targetClass grace:event .
+
+g17sn:OBJECT a sh:NodeShape ;
+    rdfs:label "object"@en ;
+    volipi:iconName "fa-solid fa-certificate" ;
+    volipi:message "Tooltip for object" ;
+    sh:name "object" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 11.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1059,
+        g17sn:property_1124,
+        g17sn:property_1141,
+        g17sn:property_1144,
+        g17sn:property_1159,
+        g17sn:property_1175,
+        g17sn:property_1178,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1181,
+        g17sn:property_1183,
+        g17sn:property_1185,
+        g17sn:property_1186,
+        g17sn:property_1196,
+        g17sn:property_1270,
+        g17sn:property_1322,
+        g17sn:property_1325,
+        g17sn:property_1422,
+        g17sn:property_151,
+        g17sn:property_153,
+        g17sn:property_154,
+        g17sn:property_156,
+        g17sn:property_159,
+        g17sn:property_161,
+        g17sn:property_162,
+        g17sn:property_163,
+        g17sn:property_167,
+        g17sn:property_168,
+        g17sn:property_169,
+        g17sn:property_176,
+        g17sn:property_177,
+        g17sn:property_420,
+        g17sn:property_459,
+        g17sn:property_728,
+        g17sn:property_740,
+        g17sn:property_78,
+        g17sn:property_80,
+        g17sn:property_917,
+        g17sn:property_919,
+        g17sn:property_94,
+        g17sn:property_941,
+        g17sn:property_944,
+        g17sn:property_946 ;
+    sh:targetClass grace:object .
+
+g17sn:PERSON a sh:NodeShape ;
+    rdfs:label "person"@en ;
+    volipi:iconName "fa-solid fa-user" ;
+    volipi:message "Tooltip for person" ;
+    sh:name "person" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 24.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1183,
+        g17sn:property_1185,
+        g17sn:property_1296,
+        g17sn:property_1297,
+        g17sn:property_1298,
+        g17sn:property_1301,
+        g17sn:property_1343,
+        g17sn:property_1344,
+        g17sn:property_1345,
+        g17sn:property_163,
+        g17sn:property_59,
+        g17sn:property_78,
+        g17sn:property_81,
+        g17sn:property_867,
+        g17sn:property_868,
+        g17sn:property_869,
+        g17sn:property_917,
+        g17sn:property_959 ;
+    sh:targetClass grace:person .
+
+g17sn:PLACE a sh:NodeShape ;
+    rdfs:label "place"@en ;
+    volipi:iconName "fa-solid fa-map-marker-alt" ;
+    volipi:message "Tooltip for place" ;
+    sh:name "place" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 21.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1057,
+        g17sn:property_1164,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1183,
+        g17sn:property_1185,
+        g17sn:property_1346,
+        g17sn:property_1347,
+        g17sn:property_58,
+        g17sn:property_78,
+        g17sn:property_917,
+        g17sn:property_951,
+        g17sn:property_952,
+        g17sn:property_953,
+        g17sn:property_954,
+        g17sn:property_955,
+        g17sn:property_956 ;
+    sh:targetClass grace:place .
+
+g17sn:INSTITUTION a sh:NodeShape ;
+    rdfs:label "institution"@en ;
+    volipi:iconName "fa-solid fa-university" ;
+    volipi:message "Tooltip for institution" ;
+    sh:name "institution" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 22.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1061,
+        g17sn:property_1164,
+        g17sn:property_1179,
+        g17sn:property_1180,
+        g17sn:property_1181,
+        g17sn:property_1183,
+        g17sn:property_1185,
+        g17sn:property_1387,
+        g17sn:property_1388,
+        g17sn:property_159,
+        g17sn:property_161,
+        g17sn:property_163,
+        g17sn:property_420,
+        g17sn:property_63,
+        g17sn:property_919,
+        g17sn:property_952,
+        g17sn:property_968,
+        g17sn:property_969,
+        g17sn:property_970,
+        g17sn:property_972,
+        g17sn:property_973 ;
+    sh:targetClass grace:institution .
+
+g17sn:TYPE a sh:NodeShape ;
+    rdfs:label "type"@en ;
+    volipi:iconName "fa-solid fa-tags" ;
+    volipi:message "Tooltip for type" ;
+    sh:name "type" ;
+    sh:nodeKind sh:IRI ;
+    sh:order 20.0 ;
+    sh:property g17sn:property_1009,
+        g17sn:property_1051,
+        g17sn:property_1109,
+        g17sn:property_1110,
+        g17sn:property_1111,
+        g17sn:property_1139,
+        g17sn:property_1140,
+        g17sn:property_1177,
+        g17sn:property_1179,
+        g17sn:property_1222,
+        g17sn:property_892,
+        g17sn:property_893,
+        g17sn:property_894,
+        g17sn:property_895,
+        g17sn:property_896,
+        g17sn:property_897,
+        g17sn:property_939 ;
+    sh:targetClass grace:type .
+
+g17sn:appellation_898 a sh:NodeShape ;
+    rdfs:label "appellation"@en ;
+    volipi:iconName "fa-solid fa-id-badge" ;
+    volipi:message "Tooltip for appellation (This is only a query pattern)" ;
+    sh:name "appellation" ;
+    sh:nodeKind sh:Literal ;
+    sh:order 51.0 .
+
