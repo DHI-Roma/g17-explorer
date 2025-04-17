@@ -1,0 +1,328 @@
+{% macro render_nav(items, level=0) %}
+  {% for item in items %}
+    {% set has_children = item.children %}
+    {% set is_top = level == 0 %}
+    {% set li_class = 'nav-item dropdown' if is_top and has_children else 'nav-item' if is_top else '' %}
+    {% set a_class = 'nav-link dropdown-toggle' if is_top and has_children else 'nav-link' if is_top else 'dropdown-item' %}
+    {% set url = item.url if item.url else '#' %}
+
+    {# Build onclick logic only if item.onclick is present #}
+    {% set onclick = '' %}
+    {% if item.onclick %}
+    {% set onclick_parts = [] %}
+
+    {% if item.label %}
+        {% set set_title = "document.getElementById('title-box').innerText = '" ~ item.label | replace("'", "\\'") ~ "'" %}
+    {% else %}
+        {% set set_title = "document.getElementById('title-box').innerText = ''" %}
+    {% endif %}
+    {% set onclick_parts = onclick_parts + [set_title] %}
+
+    {% if item.description %}
+        {% set clean_description = item.description | replace("'", "\\'") | replace("\n", " ") %}
+        {% set set_description = "document.getElementById('description-box').innerText = '" ~ clean_description ~ "'" %}
+    {% else %}
+        {% set set_description = "document.getElementById('description-box').innerText = ''" %}
+    {% endif %}
+    {% set onclick_parts = onclick_parts + [set_description] %}
+
+    {% set onclick_clean = item.onclick.rstrip(';') %}
+    {% set onclick_parts = onclick_parts + [onclick_clean] %}
+
+    {% set onclick = onclick_parts | join('; ') ~ "; return false;" %}
+    {% endif %}
+
+    <li class="{{ li_class }}">
+      {% if has_children and is_top %}
+        <a class="{{ a_class }}"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false"
+           {% if item.tooltip %}title="{{ item.tooltip }}"{% endif %}
+           {% if item.target %}target="{{ item.target }}"{% endif %}
+           {% if onclick %}onclick="{{ onclick }}"{% endif %}
+        >
+          {% if item.icon %}<i class="fa {{ item.icon }}"></i> {% endif %}
+          {{ item.label }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          {{ render_nav(item.children, level + 1) }}
+        </ul>
+      {% else %}
+        <a class="{{ a_class }}"
+           href="{{ url }}"
+           {% if item.tooltip %}title="{{ item.tooltip }}"{% endif %}
+           {% if item.target %}target="{{ item.target }}"{% endif %}
+           {% if onclick %}onclick="{{ onclick }}"{% endif %}
+        >
+          {% if item.icon %}<i class="fa {{ item.icon }}"></i> {% endif %}
+          {{ item.label }}
+        </a>
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endmacro %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.title }}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- YASGUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" href="static/sparnatural/fa/css/all.min.css" />
+
+    <!-- Sparnatural CSS -->
+    <link rel="stylesheet" href="static/sparnatural/sparnatural.css">
+    
+    <!-- This page custom CSS -->
+    <link rel="stylesheet" href="static/sparnatural/styles.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">{{ config.title }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {{ render_nav(nav) }}
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1>{{ config.h1 }}</h1>
+      <p>
+      <h2 id="title-box" class="mt-4"></h2>
+      <div id="description-box" class="mt-3 text-muted small" style="min-height: 2em;"></div>
+      </p>
+      <div class="col-lg-12 px-0">
+
+      <p style="display: none;">Queries are sent to <a href="#" id="displayEndpoint">...</a></p>
+        <!-- Export Link -->
+
+      <textarea id="query-json" style="display:none;"></textarea>
+
+      <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jsonModalLabel">Query JSON</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow:hidden;">
+                    <textarea class="form-control" rows="20" id="export-json" style="width:100%" readonly></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="jsonModelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jsonModelLabel" data-i18n="import.modal.title">Import JSON</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" rows="20" id="import-json" style="width:100%"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="importButton" data-i18n="import.modal.import">Load</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- The sparnatural web component with config attributes. -->
+        <!-- See http://docs.sparnatural.eu/Javascript-integration.html#html-attributes-reference -->
+
+        <div class="mb-3 d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <!-- Expert Mode Switch -->
+        <div class="form-check form-switch m-0">
+            <input class="form-check-input" type="checkbox" id="expertSwitch">
+            <label class="form-check-label" for="expertSwitch">Expert Mode</label>
+        </div>
+
+        <!-- Collapse Toggle -->
+        <a class="d-flex align-items-center text-decoration-none" data-bs-toggle="collapse" href="#sparnatural-wrapper" role="button" aria-expanded="true" aria-controls="sparnatural-wrapper">
+            <i class="fas fa-caret-down me-2" id="toggle-icon"></i>
+            <strong>Query Interface</strong>
+        </a>
+
+        </div>
+
+        <div id="sparnatural-wrapper" class="collapse show">
+        <spar-natural
+            id="sparnatural"
+            src="{{ config.sparnatural.config.src_base }} {{ config.sparnatural.config.ontology }}"
+            endpoint="{{ config.sparnatural.config.endpoint }}"
+            lang="{{ config.sparnatural.config.lang }}"
+            defaultLang="{{ config.sparnatural.config.defaultLang }}"
+            distinct="{{ 'true' if config.sparnatural.config.distinct else 'false' }}"
+            limit="{{ config.sparnatural.config.limit }}"
+            maxOr="{{ config.sparnatural.config.maxOr }}"
+            maxDepth="{{ config.sparnatural.config.maxDepth }}"
+            debug="{{ 'true' if config.sparnatural.config.debug else 'false' }}"
+            prefixes="{{ config.sparnatural.config.prefixes }}"
+        ></spar-natural>
+        </div>
+
+
+        <span class="btn btn-primary" id="sparql-toggle" style="display: none;">Toggle SPARQL query</span>
+
+        <a href="#" id="export" class="btn btn-primary" style="display: none;">
+        <i class="fas fa-file-export"></i>Export
+        </a>
+        <a href="#" id="import" class="btn btn-secondary" style="display: none;">
+        <i id="import-icon" class="fas fa-file-import"></i><span>Import</span>
+        </a>
+
+
+      </div>
+    </div>
+
+    <!-- raw SPARQL query editor, yasQE -->
+    <!-- see https://triply.cc/docs/yasgui/ -->
+    <div class="container my-5">
+      <div id="yasqe" style="display:none; " />
+    </div>
+
+    <!-- SPARQL query results display, yasR -->
+    <!-- see https://triply.cc/docs/yasgui/ -->
+    <div class="container my-5">
+      <div id="yasr">
+      </div>
+    </div>
+    <p>Powered by <a href="https://github.com/oxigraph/oxigraph" target="_blank">Oxigraph</a>, <a href="https://sparnatural.eu/" target="_blank">Sparnatural</a>, <a href="https://github.com/epoz/shmarql" target="_blank">SHMARQL</a> and <a href="https://yasgui.triply.cc/" target="_blank">YASGUI</a>. See our <a href="{{ config.sparnatural.config.ontology }}" target="_blank">Ontology</a></p>
+
+    <!-- Bootstrap JS (maybe in conflict with base.html bootstrap?)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- YASGUI JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@triply/yasgui/build/yasgui.min.js"></script>
+
+    <!-- Sparnatural JS -->
+    <script src="static/sparnatural/sparnatural.js"></script>
+
+    <!-- Sparnatural Custom YASR plugins -->
+    <script src="static/sparnatural/sparnatural-yasgui-plugins.js"></script>
+
+    <!-- Sparnatural Custom YASR plugins 2 
+    <script src="static/sparnatural/sparnatural-yasgui-plugins_small.js"></script> -->
+
+    <!-- File containing example queries -->
+    <script src="static/sparnatural/example-queries.js"></script>
+
+    <!-- bindings JS -->
+    <script src="static/sparnatural/sparnatural-bindings.js"></script> 
+    
+    <!-- This page custom JS -->
+    <script src="static/sparnatural/main.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const expertToggle = document.getElementById("expertSwitch");
+
+        const expert = localStorage.getItem("expertMode") === "true";
+        expertToggle.checked = expert;
+
+        expertToggle.dispatchEvent(new Event("change"));
+    });
+
+    const spar = document.querySelector("spar-natural");
+    document.getElementById("expertSwitch").addEventListener("change", function () {
+        const expert = this.checked;
+
+        localStorage.setItem("expertMode", expert);
+
+        document.getElementById("sparql-toggle").style.display = expert ? "inline-block" : "none";
+        document.getElementById("export").style.display = expert ? "inline-block" : "none";
+        document.getElementById("import").style.display = expert ? "inline-block" : "none";
+
+
+        const srcBase = "{{ config.sparnatural.config.src_base }}";
+        const srcZen = "{{ config.sparnatural.config.src_base_zen }}";
+        const ontology = "{{ config.sparnatural.config.ontology }}";
+
+        spar.setAttribute("src", (expert ? srcZen : srcBase) + " " + ontology);
+    });
+
+    let forceQuerySubmit = false;
+    spar.addEventListener("queryUpdated", (event) => {
+    const queryString = spar.expandSparql(event.detail.queryString);
+    yasqe.setValue(queryString);
+
+    if (forceQuerySubmit) {
+        yasqe.query();
+        forceQuerySubmit = false;
+    } 
+    });
+
+    function runQueryAndCollapse(key) {
+    console.log("runQueryAndCollapse gestartet mit key:", key);
+
+    const spar = document.querySelector("spar-natural");
+    const q = window[key];
+
+    if (!spar || !q) {
+        return;
+    }
+
+    forceQuerySubmit = true;
+
+    spar.loadQuery(q);
+
+    setTimeout(() => {
+        new bootstrap.Collapse(document.getElementById("sparnatural-wrapper"), { toggle: false }).hide();
+    }, 150);
+    }
+
+
+
+
+
+
+    </script>
+
+
+<footer class="bg-dark text-light py-4 mt-5 w-100">
+    <div class="container-fluid text-center small">
+        <div>
+        <strong>{{ meta.title }}</strong>
+        {% if meta.home %}
+            – <a href="{{ meta.home }}" class="text-light text-decoration-underline" target="_blank">Project Homepage</a>
+        {% endif %}
+        </div>
+        <div class="mt-1">
+        &copy; {{ meta.datestamp[:4] }} {{ meta.author }}
+        </div>
+        <div class="text-muted mt-1">
+        Last updated: {{ meta.datestamp }}
+        </div>
+    </div>
+    </footer>
+  </body>
+
+
+
+</html>

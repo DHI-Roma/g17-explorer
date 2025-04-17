@@ -1,0 +1,522 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GRACEFUL17 Knowledge Graph</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- YASGUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" href="static/sparnatural/fa/css/all.min.css" />
+
+    <!-- Sparnatural CSS -->
+    <link rel="stylesheet" href="static/sparnatural/sparnatural.css">
+    
+    <!-- This page custom CSS -->
+    <link rel="stylesheet" href="static/sparnatural/styles.css">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">GRACEFUL17 Knowledge Graph</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    <li class="nav-item dropdown">
+      
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false"
+           
+           
+           
+        >
+          <i class="fa fa-compass"></i> 
+          Overview
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+        
+    
+    
+
+    
+    
+
+    
+    
+
+    <li class="">
+      
+        <a class="dropdown-item"
+           href="#"
+           title="This query focuses on the class: institution"
+           
+           onclick="document.getElementById('title-box').innerText = 'Dioceses'; document.getElementById('description-box').innerText = 'An overview on all dioceses and the essential metadata'; runQueryAndCollapse('dioceses_3'); return false; return false;"
+        >
+          <i class="fa fa-solid fa-university"></i> 
+          Dioceses
+        </a>
+      
+    </li>
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+        
+    
+    
+
+    
+    
+
+    
+    
+
+    <li class="">
+      
+        <a class="dropdown-item"
+           href="#"
+           title="This query focuses on the class: entry"
+           
+           onclick="document.getElementById('title-box').innerText = 'Entries per Source'; document.getElementById('description-box').innerText = 'A List of all entries'; runQueryAndCollapse('entries_per_source_14'); return false; return false;"
+        >
+          <i class="fa fa-solid fa-pen-fancy"></i> 
+          Entries per Source
+        </a>
+      
+    </li>
+  
+
+        </ul>
+      
+    </li>
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    <li class="nav-item dropdown">
+      
+        <a class="nav-link dropdown-toggle"
+           href="#"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false"
+           
+           
+           
+        >
+          <i class="fa fa-code"></i> 
+          Custom Queries
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+        
+    
+    
+
+    
+    
+
+    
+    
+
+    <li class="">
+      
+        <a class="dropdown-item"
+           href="#"
+           title="This query focuses on the class: type"
+           
+           onclick="document.getElementById('title-box').innerText = 'Vacancy type'; document.getElementById('description-box').innerText = 'Creates a list of events that have certain vacancy types (here per obitum and resignation) in a certain period (here 01-01-1622 till 31-12-1622), reduced to an Expeditiones Register (here Expedit. 2) in a certain diocese (here Barchinonensis/Barcelona).'; runQueryAndCollapse('vacancy_type_11'); return false; return false;"
+        >
+          <i class="fa fa-solid fa-tags"></i> 
+          Vacancy type
+        </a>
+      
+    </li>
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+        
+    
+    
+
+    
+        
+        
+    
+    
+
+    
+    
+
+    
+    
+
+    <li class="">
+      
+        <a class="dropdown-item"
+           href="#"
+           title="This query focuses on the class: event"
+           
+           onclick="document.getElementById('title-box').innerText = 'Events per pope and diocese '; document.getElementById('description-box').innerText = 'The query produces the number of events per pontificate per diocese.'; runQueryAndCollapse('events_per_pope_and_diocese__13'); return false; return false;"
+        >
+          <i class="fa fa-solid fa-calendar-day"></i> 
+          Events per pope and diocese 
+        </a>
+      
+    </li>
+  
+
+        </ul>
+      
+    </li>
+  
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    <li class="nav-item">
+      
+        <a class="nav-link"
+           href="https://w3id.org/grace/ontospy"
+           
+           target="_blank"
+           
+        >
+          <i class="fa fa-book"></i> 
+          Ontology
+        </a>
+      
+    </li>
+  
+
+        </ul>
+        </div>
+    </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1>Ask Me Anything About Grace!</h1>
+      <p>
+      <h2 id="title-box" class="mt-4"></h2>
+      <div id="description-box" class="mt-3 text-muted small" style="min-height: 2em;"></div>
+      </p>
+      <div class="col-lg-12 px-0">
+
+      <p style="display: none;">Queries are sent to <a href="#" id="displayEndpoint">...</a></p>
+        <!-- Export Link -->
+
+      <textarea id="query-json" style="display:none;"></textarea>
+
+      <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="jsonModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jsonModalLabel">Query JSON</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow:hidden;">
+                    <textarea class="form-control" rows="20" id="export-json" style="width:100%" readonly></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="jsonModelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jsonModelLabel" data-i18n="import.modal.title">Import JSON</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" rows="20" id="import-json" style="width:100%"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="importButton" data-i18n="import.modal.import">Load</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- The sparnatural web component with config attributes. -->
+        <!-- See http://docs.sparnatural.eu/Javascript-integration.html#html-attributes-reference -->
+
+        <div class="mb-3 d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <!-- Expert Mode Switch -->
+        <div class="form-check form-switch m-0">
+            <input class="form-check-input" type="checkbox" id="expertSwitch">
+            <label class="form-check-label" for="expertSwitch">Expert Mode</label>
+        </div>
+
+        <!-- Collapse Toggle -->
+        <a class="d-flex align-items-center text-decoration-none" data-bs-toggle="collapse" href="#sparnatural-wrapper" role="button" aria-expanded="true" aria-controls="sparnatural-wrapper">
+            <i class="fas fa-caret-down me-2" id="toggle-icon"></i>
+            <strong>Query Interface</strong>
+        </a>
+
+        </div>
+
+        <div id="sparnatural-wrapper" class="collapse show">
+        <spar-natural
+            id="sparnatural"
+            src="https://dataria.org/static/sparnatural/config.ttl https://dataria.org/file/results/rdf/ontology/graceful17.ttl"
+            endpoint="https://graph.dhi-roma.it/query"
+            lang="en"
+            defaultLang="en"
+            distinct="true"
+            limit="10000"
+            maxOr="10"
+            maxDepth="10"
+            debug="false"
+            prefixes="crm:http://www.cidoc-crm.org/cidoc-crm/ schema:http://schema.org/ skos:http://www.w3.org/2004/02/skos/core# g17:https://g17.dhi-roma.it/resources/ grace:https://w3id.org/g17/ontology/ grace_deprecated:https://g17.dhi-roma.it/ontology/ owl:http://www.w3.org/2002/07/owl# xsd:http://www.w3.org/2001/XMLSchema# prov:http://www.w3.org/ns/prov# geosparql:http://www.opengis.net/ont/geosparql# rdf:http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs:http://www.w3.org/2000/01/rdf-schema# sparnatural:http://data.sparna.fr/ontologies/sparnatural-config-core# rico:https://www.ica.org/standards/RiC/ontology# credit:https://credit.niso.org/contributor-roles/ sparnatural_datasource:http://data.sparna.fr/ontologies/sparnatural-config-datasources# sh:http://www.w3.org/ns/shacl# volipi:http://data.sparna.fr/ontologies/volipi# dash:http://datashapes.org/dash# ninox:https://dhi-roma.ninoxdb.de/#/teams/NBTkuKmSGa68zYCD4/database/t4l3rzpnsoua/ g17raw:https://g17.dhi-roma.it/raw/ wd:http://www.wikidata.org/entity/"
+        ></spar-natural>
+        </div>
+
+
+        <span class="btn btn-primary" id="sparql-toggle" style="display: none;">Toggle SPARQL query</span>
+
+        <a href="#" id="export" class="btn btn-primary" style="display: none;">
+        <i class="fas fa-file-export"></i>Export
+        </a>
+        <a href="#" id="import" class="btn btn-secondary" style="display: none;">
+        <i id="import-icon" class="fas fa-file-import"></i><span>Import</span>
+        </a>
+
+
+      </div>
+    </div>
+
+    <!-- raw SPARQL query editor, yasQE -->
+    <!-- see https://triply.cc/docs/yasgui/ -->
+    <div class="container my-5">
+      <div id="yasqe" style="display:none; " />
+    </div>
+
+    <!-- SPARQL query results display, yasR -->
+    <!-- see https://triply.cc/docs/yasgui/ -->
+    <div class="container my-5">
+      <div id="yasr">
+      </div>
+    </div>
+    <p>Powered by <a href="https://github.com/oxigraph/oxigraph" target="_blank">Oxigraph</a>, <a href="https://sparnatural.eu/" target="_blank">Sparnatural</a>, <a href="https://github.com/epoz/shmarql" target="_blank">SHMARQL</a> and <a href="https://yasgui.triply.cc/" target="_blank">YASGUI</a>. See our <a href="https://dataria.org/file/results/rdf/ontology/graceful17.ttl" target="_blank">Ontology</a></p>
+
+    <!-- Bootstrap JS (maybe in conflict with base.html bootstrap?)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- YASGUI JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@triply/yasgui/build/yasgui.min.js"></script>
+
+    <!-- Sparnatural JS -->
+    <script src="static/sparnatural/sparnatural.js"></script>
+
+    <!-- Sparnatural Custom YASR plugins -->
+    <script src="static/sparnatural/sparnatural-yasgui-plugins.js"></script>
+
+    <!-- Sparnatural Custom YASR plugins 2 
+    <script src="static/sparnatural/sparnatural-yasgui-plugins_small.js"></script> -->
+
+    <!-- File containing example queries -->
+    <script src="static/sparnatural/example-queries.js"></script>
+
+    <!-- bindings JS -->
+    <script src="static/sparnatural/sparnatural-bindings.js"></script> 
+    
+    <!-- This page custom JS -->
+    <script src="static/sparnatural/main.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const expertToggle = document.getElementById("expertSwitch");
+
+        const expert = localStorage.getItem("expertMode") === "true";
+        expertToggle.checked = expert;
+
+        expertToggle.dispatchEvent(new Event("change"));
+    });
+
+    const spar = document.querySelector("spar-natural");
+    document.getElementById("expertSwitch").addEventListener("change", function () {
+        const expert = this.checked;
+
+        localStorage.setItem("expertMode", expert);
+
+        document.getElementById("sparql-toggle").style.display = expert ? "inline-block" : "none";
+        document.getElementById("export").style.display = expert ? "inline-block" : "none";
+        document.getElementById("import").style.display = expert ? "inline-block" : "none";
+
+
+        const srcBase = "https://dataria.org/static/sparnatural/config.ttl";
+        const srcZen = "https://dataria.org/static/sparnatural/config.ttl";
+        const ontology = "https://dataria.org/file/results/rdf/ontology/graceful17.ttl";
+
+        spar.setAttribute("src", (expert ? srcZen : srcBase) + " " + ontology);
+    });
+
+    let forceQuerySubmit = false;
+    spar.addEventListener("queryUpdated", (event) => {
+    const queryString = spar.expandSparql(event.detail.queryString);
+    yasqe.setValue(queryString);
+
+    if (forceQuerySubmit) {
+        yasqe.query();
+        forceQuerySubmit = false;
+    } 
+    });
+
+    function runQueryAndCollapse(key) {
+    console.log("runQueryAndCollapse gestartet mit key:", key);
+
+    const spar = document.querySelector("spar-natural");
+    const q = window[key];
+
+    if (!spar || !q) {
+        return;
+    }
+
+    forceQuerySubmit = true;
+
+    spar.loadQuery(q);
+
+    setTimeout(() => {
+        new bootstrap.Collapse(document.getElementById("sparnatural-wrapper"), { toggle: false }).hide();
+    }, 150);
+    }
+
+
+
+
+
+
+    </script>
+
+
+<footer class="bg-dark text-light py-4 mt-5 w-100">
+    <div class="container-fluid text-center small">
+        <div>
+        <strong>G17 Explorer</strong>
+        
+            – <a href="https://dhi-roma.github.io/g17-explorer/" class="text-light text-decoration-underline" target="_blank">Project Homepage</a>
+        
+        </div>
+        <div class="mt-1">
+        &copy; 2025 Christoph Sander
+        </div>
+        <div class="text-muted mt-1">
+        Last updated: 2025-04-17
+        </div>
+    </div>
+    </footer>
+  </body>
+
+
+
+</html>

@@ -99,11 +99,11 @@ document.getElementById('sparql-toggle').onclick = function() {
 const tableXConfig = yasr.plugins["TableX"].config;
 Object.assign(tableXConfig, {
   includeControls: true,
-  openIriInNewWindow: true,
-  uriHrefAdapter: (uri) => 
-    uri.startsWith("https://g17.dhi-roma.it/")
-      ? `${window.location.protocol}//${window.location.hostname}/shmarql?g=&e=_local_&s=%3C${encodeURIComponent(uri)}%3E`
-      : uri
+  openIriInNewWindow: true,  
+//   uriHrefAdapter: (uri) => 
+//     uri.startsWith("https://g17.dhi-roma.it/")
+//       ? `${window.location.protocol}//${window.location.hostname}/shmarql?g=&e=_local_&s=%3C${encodeURIComponent(uri)}%3E`
+//       : uri
 });
 
 const importModal = new bootstrap.Modal(document.getElementById('importModal'));
@@ -120,22 +120,22 @@ document.getElementById('importButton').addEventListener('click', function() {
 	sparnatural.loadQuery(json);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-	let c_query = window.sparnaturalConfig.c_query;
-    try {
-        if (!c_query) {
-            console.warn("c_query is undefined or null.");
-            return;
-        }
-        if (Object.keys(c_query).length === 0) {
-            console.warn("c_query is an empty object.");
-            return;
-        }
-		document.querySelector("spar-natural").loadQuery(c_query);
-	} catch (e) {
-		console.error("Error:", e);
-	}
-});
+// document.addEventListener("DOMContentLoaded", function() {
+// 	let c_query = window.sparnaturalConfig.c_query;
+//     try {
+//         if (!c_query) {
+//             console.warn("c_query is undefined or null.");
+//             return;
+//         }
+//         if (Object.keys(c_query).length === 0) {
+//             console.warn("c_query is an empty object.");
+//             return;
+//         }
+// 		document.querySelector("spar-natural").loadQuery(c_query);
+// 	} catch (e) {
+// 		console.error("Error:", e);
+// 	}
+// });
 
 // binds Sparnatural with the YasR plugins
 bindSparnaturalWithYasrPlugins(sparnatural, yasr);

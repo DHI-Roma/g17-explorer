@@ -1,0 +1,19 @@
+[
+    {
+      "label": "Overview",
+      "icon": "fa-compass",
+      "children": [{"label":"Dioceses","onclick":"runQueryAndCollapse('dioceses_3'); return false;","icon":"fa-solid fa-university","tooltip":"This query focuses on the class: institution","description":"An overview on all dioceses and the essential metadata"},{"label":"Entries per Source","onclick":"runQueryAndCollapse('entries_per_source_14'); return false;","icon":"fa-solid fa-pen-fancy","tooltip":"This query focuses on the class: entry","description":"A List of all entries"}]
+    },
+    {
+        "label": "Custom Queries",
+        "icon": "fa-code",
+        "children": [{"label":"Vacancy type","onclick":"runQueryAndCollapse('vacancy_type_11'); return false;","icon":"fa-solid fa-tags","tooltip":"This query focuses on the class: type","description":"Creates a list of events that have certain vacancy types (here per obitum and resignation) in a certain period (here 01-01-1622 till 31-12-1622), reduced to an Expeditiones Register (here Expedit. 2) in a certain diocese (here Barchinonensis/Barcelona)."},{"label":"Events per pope and diocese ","onclick":"runQueryAndCollapse('events_per_pope_and_diocese__13'); return false;","icon":"fa-solid fa-calendar-day","tooltip":"This query focuses on the class: event","description":"The query produces the number of events per pontificate per diocese."}]
+    },
+    {
+      "label": "Ontology",
+      "url": "https://w3id.org/grace/ontospy",
+      "icon": "fa-book",
+      "target":"_blank"
+    }
+  ]
+  
