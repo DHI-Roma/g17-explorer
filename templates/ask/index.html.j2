@@ -155,6 +155,11 @@
         <!-- The sparnatural web component with config attributes. -->
         <!-- See http://docs.sparnatural.eu/Javascript-integration.html#html-attributes-reference -->
 
+        <div id="expert-warning" class="alert alert-warning alert-dismissible fade show d-none mt-3" role="alert">
+        <strong>Warning:</strong> Expert mode is currently deactivated. If this query does not return results, try to turn expert mode on.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
         <div class="mb-3 d-flex align-items-center justify-content-between flex-wrap gap-3">
 
         <!-- Expert Mode Switch -->
@@ -259,6 +264,10 @@
         document.getElementById("export").style.display = expert ? "inline-block" : "none";
         document.getElementById("import").style.display = expert ? "inline-block" : "none";
 
+        const tableXPlugin = yasr.plugins["TableX"];
+        if (tableXPlugin) {
+        tableXPlugin.config.includeControls = expert;
+        }
 
         const srcBase = "{{ config.sparnatural.config.src_base }}";
         const srcZen = "{{ config.sparnatural.config.src_base_zen }}";
@@ -278,14 +287,26 @@
     } 
     });
 
+    function showExpertWarning() {
+    const warning = document.getElementById("expert-warning");
+      if (warning) {
+        warning.classList.remove("d-none");    
+        }
+    
+    }
+
     function runQueryAndCollapse(key) {
-    console.log("runQueryAndCollapse gestartet mit key:", key);
+    console.log("runQueryAndCollapse with key:", key);
 
     const spar = document.querySelector("spar-natural");
     const q = window[key];
 
     if (!spar || !q) {
         return;
+    }
+    const expert = document.getElementById("expertSwitch").checked;
+    if (!expert) {
+        showExpertWarning();
     }
 
     forceQuerySubmit = true;
