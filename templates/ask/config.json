@@ -1,6 +1,6 @@
 {"sparnatural":{"config":{
     "src_base": "https://dataria.org/static/sparnatural/config.ttl",
-    "src_base_zen": "https://dataria.org/static/sparnatural/config.ttl",
+    "src_base_zen": "https://dataria.dhi-roma.it/file/results/rdf/shacl_sparnatural_graceful17_zen.ttl",
     "ontology": "https://dataria.org/file/results/rdf/ontology/graceful17.ttl",
     "endpoint": "https://graph.dhi-roma.it/query",
     "lang": "en",
@@ -10,6 +10,6 @@
     "maxOr": 10,
     "maxDepth": 10,
     "debug": false,
-    "prefixes": "crm:http://www.cidoc-crm.org/cidoc-crm/ schema:http://schema.org/ skos:http://www.w3.org/2004/02/skos/core# g17:https://g17.dhi-roma.it/resources/ grace:https://w3id.org/g17/ontology/ grace_deprecated:https://g17.dhi-roma.it/ontology/ owl:http://www.w3.org/2002/07/owl# xsd:http://www.w3.org/2001/XMLSchema# prov:http://www.w3.org/ns/prov# geosparql:http://www.opengis.net/ont/geosparql# rdf:http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs:http://www.w3.org/2000/01/rdf-schema# sparnatural:http://data.sparna.fr/ontologies/sparnatural-config-core# rico:https://www.ica.org/standards/RiC/ontology# credit:https://credit.niso.org/contributor-roles/ sparnatural_datasource:http://data.sparna.fr/ontologies/sparnatural-config-datasources# sh:http://www.w3.org/ns/shacl# volipi:http://data.sparna.fr/ontologies/volipi# dash:http://datashapes.org/dash# ninox:https://dhi-roma.ninoxdb.de/#/teams/NBTkuKmSGa68zYCD4/database/t4l3rzpnsoua/ g17raw:https://g17.dhi-roma.it/raw/ wd:http://www.wikidata.org/entity/"
+    "prefixes": "crm:http://www.cidoc-crm.org/cidoc-crm/ schema:http://schema.org/ skos:http://www.w3.org/2004/02/skos/core# g17:https://g17.dhi-roma.it/resources/ grace:https://w3id.org/grace/ontology/ grace_deprecated:https://g17.dhi-roma.it/ontology/ owl:http://www.w3.org/2002/07/owl# xsd:http://www.w3.org/2001/XMLSchema# prov:http://www.w3.org/ns/prov# geosparql:http://www.opengis.net/ont/geosparql# rdf:http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs:http://www.w3.org/2000/01/rdf-schema# sparnatural:http://data.sparna.fr/ontologies/sparnatural-config-core# rico:https://www.ica.org/standards/RiC/ontology# credit:https://credit.niso.org/contributor-roles/ sparnatural_datasource:http://data.sparna.fr/ontologies/sparnatural-config-datasources# sh:http://www.w3.org/ns/shacl# volipi:http://data.sparna.fr/ontologies/volipi# dash:http://datashapes.org/dash# ninox:https://dhi-roma.ninoxdb.de/#/teams/NBTkuKmSGa68zYCD4/database/t4l3rzpnsoua/ g17raw:https://g17.dhi-roma.it/raw/ wd:http://www.wikidata.org/entity/"
   }
   },"h1":"Ask Me Anything About Grace!", "title":"GRACEFUL17 Knowledge Graph"}

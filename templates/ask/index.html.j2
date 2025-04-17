@@ -273,7 +273,7 @@
         const srcZen = "{{ config.sparnatural.config.src_base_zen }}";
         const ontology = "{{ config.sparnatural.config.ontology }}";
 
-        spar.setAttribute("src", (expert ? srcZen : srcBase) + " " + ontology);
+        spar.setAttribute("src", (expert ? srcBase : srcZen) + " " + ontology);
     });
 
     let forceQuerySubmit = false;
