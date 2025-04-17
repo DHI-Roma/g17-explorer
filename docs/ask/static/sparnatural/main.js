@@ -96,8 +96,8 @@ document.getElementById('sparql-toggle').onclick = function() {
 	return false;        
 } ;
 
-const tableXConfig = yasr.plugins["TableX"].config;
-Object.assign(tableXConfig, {
+const tableXConfig = yasr.plugins["TableX"];
+Object.assign(tableXConfig.config, {
   includeControls: true,
   openIriInNewWindow: true,  
 //   uriHrefAdapter: (uri) => 
@@ -105,6 +105,7 @@ Object.assign(tableXConfig, {
 //       ? `${window.location.protocol}//${window.location.hostname}/shmarql?g=&e=_local_&s=%3C${encodeURIComponent(uri)}%3E`
 //       : uri
 });
+tableX.persistentConfig.compact = true;
 
 const importModal = new bootstrap.Modal(document.getElementById('importModal'));
 
