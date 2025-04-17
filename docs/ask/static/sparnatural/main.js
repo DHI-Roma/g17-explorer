@@ -105,7 +105,7 @@ Object.assign(tableXConfig.config, {
 //       ? `${window.location.protocol}//${window.location.hostname}/shmarql?g=&e=_local_&s=%3C${encodeURIComponent(uri)}%3E`
 //       : uri
 });
-tableX.persistentConfig.compact = true;
+tableXConfig.persistentConfig.compact = true;
 
 const importModal = new bootstrap.Modal(document.getElementById('importModal'));
 
