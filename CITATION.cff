@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+title:  >-
+  GRACEFUL17 Explorer
+abstract: Explorative Tools for the GRACEFUL17 data
+type: software
+license: MIT
+url: https://github.com/DHI-Roma/g17-explorer
+authors: 
+  - family-names: Sander
+    given-names: Christoph
+date-released: 2025-04-19Enter file contents here
