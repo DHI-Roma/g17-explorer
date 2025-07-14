@@ -22,6 +22,7 @@ jobs:
       - name: Render templates
         run: python render.py
 
+    # uncomment for remote deploy
     #   - name: Deploy to GitHub Pages
     #     uses: peaceiris/actions-gh-pages@v3
     #     with:
