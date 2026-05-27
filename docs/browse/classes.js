@@ -25,6 +25,7 @@ const prevPageEl = document.querySelector("#prev-page");
 const nextPageEl = document.querySelector("#next-page");
 
 const PAGE_SIZE = 100;
+let currentClassUri = null; 
 let currentPage = 0;
 let currentSearch = "";
 let currentTotal = 0;
