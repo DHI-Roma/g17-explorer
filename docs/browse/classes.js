@@ -180,10 +180,7 @@ async function queryClasses() {
           FILTER(isIRI(?parent))
         }
 
-        OPTIONAL {
-          ?class rdfs:label ?label .
-          FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
-        }
+        ?class rdfs:label ?label .
 
         OPTIONAL {
           ?class rdfs:comment ?comment .
@@ -250,13 +247,10 @@ async function queryInstanceCount(classUri, search = "") {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
     SELECT (COUNT(DISTINCT ?instance) AS ?count) WHERE {
-      ?instance rdf:type/rdfs:subClassOf* <${escapeSparqlIri(classUri)}> .
+      ?instance rdf:type <${escapeSparqlIri(classUri)}> .
       FILTER(isIRI(?instance))
-
-      OPTIONAL {
-        ?instance rdfs:label ?label .
-        FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
-      }
+      
+      ?instance rdfs:label ?label .      
 
       ${searchFilter}
     }
@@ -280,13 +274,10 @@ async function queryInstances(classUri, search = "", page = 0) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
     SELECT ?instance (SAMPLE(?label) AS ?instanceLabel) WHERE {
-      ?instance rdf:type/rdfs:subClassOf* <${escapeSparqlIri(classUri)}> .
+      ?instance rdf:type <${escapeSparqlIri(classUri)}> .
       FILTER(isIRI(?instance))
-
-      OPTIONAL {
-        ?instance rdfs:label ?label .
-        FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
-      }
+      
+      ?instance rdfs:label ?label .
 
       ${searchFilter}
     }
