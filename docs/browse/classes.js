@@ -179,6 +179,11 @@ async function queryClasses() {
         ?class a owl:Class .
         FILTER(isIRI(?class))
 
+        OPTIONAL {
+          ?class rdfs:subClassOf ?parent .
+          FILTER(isIRI(?parent))
+        }
+
         ?class rdfs:label ?label .
 
         OPTIONAL {
@@ -201,10 +206,6 @@ async function queryClasses() {
         }
       }
 
-      FILTER EXISTS {
-        ?instance a ?instanceClass .
-        ?instanceClass rdfs:subClassOf* ?class .
-      }
     }
     GROUP BY ?class
     ORDER BY LCASE(STR(COALESCE(SAMPLE(?label), ?class)))
