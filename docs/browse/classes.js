@@ -85,6 +85,10 @@ async function loadClasses() {
 
 async function renderCurrentClass() {
   const uri = getClassUriFromLocation();
+  if (uri !== currentClassUri) {
+    currentClassUri = uri;
+    currentPage = 0;
+  }
   const selected = classByUri.get(uri);
 
   instancesEl.innerHTML = "";
