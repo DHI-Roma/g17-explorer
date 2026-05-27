@@ -163,7 +163,8 @@ async function queryClasses() {
 FILTER(?class NOT IN (
   <http://www.w3.org/2002/07/owl#Thing>,
   <http://xmlns.com/foaf/0.1/Agent>,
-  <https://semantic-html.org/vocab#Semantics>
+  <https://w3id.org/grace/ontology/anything>
+  <https://w3id.org/grace/ontology/description>
 ))
 
 FILTER NOT EXISTS {
@@ -174,7 +175,7 @@ FILTER NOT EXISTS {
   VALUES ?blocked {
     <http://www.w3.org/2002/07/owl#Thing>
     <http://xmlns.com/foaf/0.1/Agent>
-    <https://semantic-html.org/vocab#Semantics>
+    <https://w3id.org/grace/ontology/description>
   }
 }
 
