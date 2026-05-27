@@ -1,5 +1,5 @@
 // const ENDPOINT = "http://localhost:7879/query";
-const ENDPOINT = "https://graph.dhi-roma.it/sparql/query";
+const ENDPOINT = "https://graph.dhi-roma.it/query";
 
 const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
 

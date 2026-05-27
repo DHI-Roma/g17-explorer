@@ -1,20 +1,16 @@
 // const ENDPOINT = "http://localhost:7879/query";
-const ENDPOINT = "https://graph.dhi-roma.it/sparql/query";
+const ENDPOINT = "https://graph.dhi-roma.it/query";
 
 const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
 // const ONTOLOGY_GRAPH = null;
 
 const HIDDEN_PROPERTIES = new Set([
-  "http://www.zotero.org/namespaces/export#version",
   "http://www.w3.org/2000/01/rdf-schema#label",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
   "http://www.w3.org/2000/01/rdf-schema#comment",
   "http://www.w3.org/2002/07/owl#sameAs",
   "http://purl.org/dc/elements/1.1/relation",
   "http://www.w3.org/ns/prov#generatedAtTime",
-  "http://www.zotero.org/namespaces/export#links",
-  "http://www.zotero.org/namespaces/export#href",
-  "http://www.zotero.org/namespaces/export#url"
 ]);
 
 
