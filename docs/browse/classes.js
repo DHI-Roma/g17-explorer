@@ -2,11 +2,30 @@
 const ENDPOINT = "https://graph.dhi-roma.it/query";
 
 const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
+const HIDDEN_CLASSES = [
+  "http://www.w3.org/2002/07/owl#Thing"
+];
+
+const HIDDEN_CLASS_BRANCHES = [
+  "http://xmlns.com/foaf/0.1/Agent",
+  "https://semantic-html.org/vocab#Semantics"
+];
 
 const LANGUAGE = "en";
 const LIMIT = 1000;
 const RESOURCE_VIEWER =
   location.pathname.replace(/\/$/, "") + "/resource";
+
+const searchEl = document.querySelector("#instance-search");
+const instanceCountEl = document.querySelector("#instance-count");
+const pageInfoEl = document.querySelector("#page-info");
+const prevPageEl = document.querySelector("#prev-page");
+const nextPageEl = document.querySelector("#next-page");
+
+const PAGE_SIZE = 100;
+let currentPage = 0;
+let currentSearch = "";
+let currentTotal = 0;
 
 const statusEl = document.querySelector("#status");
 const contentEl = document.querySelector("#content");
@@ -16,7 +35,13 @@ const classUriEl = document.querySelector("#class-uri");
 const commentBoxEl = document.querySelector("#comment-box");
 const commentTextEl = document.querySelector("#comment-text");
 const instancesEl = document.querySelector("#instances");
+const hiddenClasses = HIDDEN_CLASSES
+  .map((iri) => `<${escapeSparqlIri(iri)}>`)
+  .join(",\n  ");
 
+const hiddenBranches = HIDDEN_CLASS_BRANCHES
+  .map((iri) => `<${escapeSparqlIri(iri)}>`)
+  .join("\n    ");
 let classes = [];
 let classByUri = new Map();
 
@@ -91,8 +116,16 @@ async function renderCurrentClass() {
   showStatus("Loading Instances …");
 
   try {
-    const data = await queryInstances(selected.uri);
+    const [countData, data] = await Promise.all([
+      queryInstanceCount(selected.uri, currentSearch),
+      queryInstances(selected.uri, currentSearch, currentPage)
+    ]);
+
+    currentTotal = Number(countData.results.bindings[0].count.value);
+
     renderInstances(data.results.bindings);
+    renderPagination();
+
     hideStatus();
     contentEl.hidden = false;
   } catch (error) {
@@ -109,22 +142,18 @@ function getClassUriFromLocation() {
   return new URLSearchParams(location.search).get("class");
 }
 
-const searchEl =
-  document.querySelector("#instance-search");
+let searchTimer;
 
 searchEl.addEventListener("input", () => {
+  clearTimeout(searchTimer);
 
-  const q =
-    searchEl.value.toLowerCase();
-
-  for (const row of document.querySelectorAll("tbody tr")) {
-
-    row.hidden =
-      !row.textContent
-        .toLowerCase()
-        .includes(q);
-  }
+  searchTimer = setTimeout(() => {
+    currentSearch = searchEl.value;
+    currentPage = 0;
+    renderCurrentClass();
+  }, 250);
 });
+
 
 async function queryClasses() {
   const graphOpen = ONTOLOGY_GRAPH ? `GRAPH <${ONTOLOGY_GRAPH}> {` : "";
@@ -160,24 +189,19 @@ async function queryClasses() {
         }
       ${graphClose}
 
-FILTER(?class NOT IN (
-  <http://www.w3.org/2002/07/owl#Thing>,
-  <http://xmlns.com/foaf/0.1/Agent>,
-  <https://w3id.org/grace/ontology/anything>,
-  <https://w3id.org/grace/ontology/description>
-))
+      FILTER(?class NOT IN (
+        ${hiddenClasses}
+      ))
 
-FILTER NOT EXISTS {
-  ${graphOpen}
-    ?class rdfs:subClassOf+ ?blocked .
-  ${graphClose}
+      FILTER NOT EXISTS {
+        ${graphOpen}
+          ?class rdfs:subClassOf+ ?blocked .
+        ${graphClose}
 
-  VALUES ?blocked {
-    <http://www.w3.org/2002/07/owl#Thing>
-    <http://xmlns.com/foaf/0.1/Agent>
-    <https://w3id.org/grace/ontology/description>
-  }
-}
+        VALUES ?blocked {
+          ${hiddenBranches}
+        }
+      }
 
       FILTER EXISTS {
         ?instance a ?instanceClass .
@@ -186,29 +210,6 @@ FILTER NOT EXISTS {
     }
     GROUP BY ?class
     ORDER BY LCASE(STR(COALESCE(SAMPLE(?label), ?class)))
-    LIMIT ${LIMIT}
-  `;
-
-  return sparql(query);
-}
-
-async function queryInstances(classUri) {
-  const query = `
-    PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
-    SELECT ?instance (SAMPLE(?label) AS ?instanceLabel) WHERE {
-      ?instance rdf:type/rdfs:subClassOf* <${escapeSparqlIri(classUri)}> .
-
-      FILTER(isIRI(?instance))
-
-      OPTIONAL {
-        ?instance rdfs:label ?label .
-        FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
-      }
-    }
-    GROUP BY ?instance
-    ORDER BY LCASE(STR(COALESCE(SAMPLE(?label), ?instance)))
     LIMIT ${LIMIT}
   `;
 
@@ -232,6 +233,74 @@ async function sparql(query) {
   return response.json();
 }
 
+async function queryInstanceCount(classUri, search = "") {
+  const searchFilter = search.trim()
+    ? `
+      FILTER(
+        CONTAINS(LCASE(STR(?instance)), LCASE("${escapeSparqlString(search)}")) ||
+        CONTAINS(LCASE(STR(?label)), LCASE("${escapeSparqlString(search)}"))
+      )
+    `
+    : "";
+
+  const query = `
+    PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT (COUNT(DISTINCT ?instance) AS ?count) WHERE {
+      ?instance rdf:type/rdfs:subClassOf* <${escapeSparqlIri(classUri)}> .
+      FILTER(isIRI(?instance))
+
+      OPTIONAL {
+        ?instance rdfs:label ?label .
+        FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
+      }
+
+      ${searchFilter}
+    }
+  `;
+
+  return sparql(query);
+}
+
+async function queryInstances(classUri, search = "", page = 0) {
+  const searchFilter = search.trim()
+    ? `
+      FILTER(
+        CONTAINS(LCASE(STR(?instance)), LCASE("${escapeSparqlString(search)}")) ||
+        CONTAINS(LCASE(STR(?label)), LCASE("${escapeSparqlString(search)}"))
+      )
+    `
+    : "";
+
+  const query = `
+    PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT ?instance (SAMPLE(?label) AS ?instanceLabel) WHERE {
+      ?instance rdf:type/rdfs:subClassOf* <${escapeSparqlIri(classUri)}> .
+      FILTER(isIRI(?instance))
+
+      OPTIONAL {
+        ?instance rdfs:label ?label .
+        FILTER(lang(?label) = "${LANGUAGE}" || lang(?label) = "")
+      }
+
+      ${searchFilter}
+    }
+    GROUP BY ?instance
+    ORDER BY LCASE(STR(COALESCE(SAMPLE(?label), ?instance)))
+    LIMIT ${PAGE_SIZE}
+    OFFSET ${page * PAGE_SIZE}
+  `;
+
+  return sparql(query);
+}
+
+function escapeSparqlString(value) {
+  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
 function normalizeClasses(bindings) {
   return bindings.map((binding) => ({
     uri: binding.class.value,
@@ -242,6 +311,33 @@ function normalizeClasses(bindings) {
       : []
   }));
 }
+
+function renderPagination() {
+  const totalPages = Math.max(1, Math.ceil(currentTotal / PAGE_SIZE));
+
+  instanceCountEl.textContent = `${currentTotal} results`;
+  pageInfoEl.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+
+  prevPageEl.disabled = currentPage === 0;
+  nextPageEl.disabled = currentPage >= totalPages - 1;
+}
+
+prevPageEl.addEventListener("click", () => {
+  if (currentPage > 0) {
+    currentPage--;
+    renderCurrentClass();
+  }
+});
+
+nextPageEl.addEventListener("click", () => {
+  const totalPages = Math.ceil(currentTotal / PAGE_SIZE);
+
+  if (currentPage < totalPages - 1) {
+    currentPage++;
+    renderCurrentClass();
+  }
+});
+
 
 function renderClassTree(entries) {
   classTreeEl.innerHTML = "";
