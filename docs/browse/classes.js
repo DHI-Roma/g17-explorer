@@ -179,11 +179,6 @@ async function queryClasses() {
         ?class a owl:Class .
         FILTER(isIRI(?class))
 
-        OPTIONAL {
-          ?class rdfs:subClassOf ?parent .
-          FILTER(isIRI(?parent))
-        }
-
         ?class rdfs:label ?label .
 
         OPTIONAL {
