@@ -4,7 +4,6 @@ const ENDPOINT = "https://graph.dhi-roma.it/query";
 const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
 const HIDDEN_CLASSES = [
   "http://www.w3.org/2002/07/owl#Thing",
-  "https://w3id.org/grace/ontology/anything",
   "https://w3id.org/grace/ontology/description"
 ];
 

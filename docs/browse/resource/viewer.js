@@ -646,7 +646,7 @@ function renderObject(binding) {
 
     return withCopy(div, object.value);
   }
-  if (object.type === "uri") {
+  if (object.type === "uri" || object.type === "bnode") {
     const link = document.createElement("a");
     link.href = "#" + encodeURIComponent(object.value);
     link.textContent = binding.oLabel?.value || shortenIri(object.value);
