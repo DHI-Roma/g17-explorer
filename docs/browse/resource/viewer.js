@@ -80,7 +80,7 @@ async function loadCurrentResource() {
   span.textContent = uri;
 
   resourceUriEl.appendChild(withCopy(span, uri));
-  showStatus("Loading Ressource …");
+  showStatus("Loading Resource …");
 
   try {
     const resolvedUri = await resolveUri(uri);
