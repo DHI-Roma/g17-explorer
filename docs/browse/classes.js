@@ -1,7 +1,22 @@
 // const ENDPOINT = "http://localhost:7879/query";
-const ENDPOINT = "https://graph.dhi-roma.it/query";
+const DEFAULT_ENDPOINT = "https://graph.dhi-roma.it/query";
 
-const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
+const DEFAULT_ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
+
+const params = new URLSearchParams(location.search);
+
+const ENDPOINT =
+  params.get("endpoint")
+  || DEFAULT_ENDPOINT;
+
+const ONTOLOGY_GRAPH =
+  params.get("ontology")
+  || DEFAULT_ONTOLOGY_GRAPH;
+
+console.log("SPARQL endpoint:", ENDPOINT);
+
+
+
 const HIDDEN_CLASSES = [
   "http://www.w3.org/2002/07/owl#Thing",
   "https://w3id.org/grace/ontology/description"
@@ -69,8 +84,9 @@ async function loadClasses() {
     renderClassTree(classes);
 
     if (!getClassUriFromLocation()) {
-      const firstRoot = classes.find((entry) => entry.parents.length === 0) || classes[0];
-      location.hash = encodeURIComponent(firstRoot.uri);
+      hideStatus();
+      contentEl.hidden = false;
+      classLabelEl.textContent = "Select a class";
       return;
     }
 
@@ -411,8 +427,22 @@ function renderInstances(bindings) {
     const labelTd = document.createElement("td");
     const uriTd = document.createElement("td");
 
+    const params = new URLSearchParams();
+
+    if (ENDPOINT !== DEFAULT_ENDPOINT) {
+      params.set("endpoint", ENDPOINT);
+    }
+
+    if (ONTOLOGY_GRAPH) {
+      params.set("ontology", ONTOLOGY_GRAPH);
+    }
+
+    const resourceUrl =
+      `${RESOURCE_VIEWER}?${params.toString()}#${encodeURIComponent(binding.instance.value)}`;
+
     const labelLink = document.createElement("a");
-    labelLink.href = `${RESOURCE_VIEWER}#${encodeURIComponent(binding.instance.value)}`;
+    labelLink.href = resourceUrl;
+
     labelLink.target = "_blank";
     labelLink.rel = "noopener noreferrer";
     labelLink.textContent = binding.instanceLabel?.value || shortenIri(binding.instance.value);
