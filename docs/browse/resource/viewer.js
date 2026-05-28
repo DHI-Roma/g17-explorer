@@ -1,8 +1,16 @@
 // const ENDPOINT = "http://localhost:7879/query";
-const ENDPOINT = "https://graph.dhi-roma.it/query";
+const DEFAULT_ENDPOINT = "https://graph.dhi-roma.it/query";
+const DEFAULT_ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
 
-const ONTOLOGY_GRAPH = "http://www.w3.org/2002/07/owl#";
-// const ONTOLOGY_GRAPH = null;
+const params = new URLSearchParams(location.search);
+
+const ENDPOINT =
+  params.get("endpoint")
+  || DEFAULT_ENDPOINT;
+
+const ONTOLOGY_GRAPH =
+  params.get("ontology")
+  || DEFAULT_ONTOLOGY_GRAPH;
 
 const HIDDEN_PROPERTIES = new Set([
   "http://www.w3.org/2000/01/rdf-schema#label",
