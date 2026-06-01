@@ -24,6 +24,15 @@
     <section id="elastic-section">
       <h3>Browse Data</h3>
       <div class="row" id="elastic-list"></div>
+      <div class="elastic-toolbar">
+        <button id="elastic-reset" type="button">Reset Filters</button>
+        <span id="elastic-result-count" class="elastic-result-count"></span>
+        <div class="elastic-pagination">
+          <button id="elastic-prev" type="button" disabled>Previous</button>
+          <span id="elastic-page-info"></span>
+          <button id="elastic-next" type="button" disabled>Next</button>
+        </div>
+      </div>
       <div id="elastic-results" class="container mt-4">
         <div id="elastic-results-row" class="row"></div>
       </div>

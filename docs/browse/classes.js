@@ -538,6 +538,63 @@ function queryElasticData() {
   return sparql(query);
 }
 
+var ELASTIC_PAGE_SIZE = 12;
+var elasticCurrentPage = 0;
+var elasticFilteredData = [];
+var elasticListInstance = null;
+
+var elasticResultsEl = document.getElementById("elastic-results-row");
+var elasticResetBtn = document.getElementById("elastic-reset");
+var elasticPrevBtn = document.getElementById("elastic-prev");
+var elasticNextBtn = document.getElementById("elastic-next");
+var elasticPageInfo = document.getElementById("elastic-page-info");
+var elasticResultCount = document.getElementById("elastic-result-count");
+
+elasticResetBtn.addEventListener("click", resetElasticFilters);
+elasticPrevBtn.addEventListener("click", function () {
+  if (elasticCurrentPage > 0) {
+    elasticCurrentPage--;
+    renderElasticPage();
+  }
+});
+elasticNextBtn.addEventListener("click", function () {
+  var totalPages = Math.ceil(elasticFilteredData.length / ELASTIC_PAGE_SIZE);
+  if (elasticCurrentPage < totalPages - 1) {
+    elasticCurrentPage++;
+    renderElasticPage();
+  }
+});
+
+function resetElasticFilters() {
+  var builder = elasticListInstance.builder;
+  builder.el.find("li.active").removeClass("active");
+  builder.el.find("li").removeClass(builder.hideClass);
+  for (var elId in builder.countMap) {
+    builder.el.find("#" + elId).text(builder.countMap[elId]);
+  }
+  builder.el.find("input.elastic-filter").val("");
+  builder.el.find("style").html("");
+  builder.onchange({});
+}
+
+function renderElasticPage() {
+  var totalPages = Math.max(1, Math.ceil(elasticFilteredData.length / ELASTIC_PAGE_SIZE));
+  var start = elasticCurrentPage * ELASTIC_PAGE_SIZE;
+  var end = Math.min(start + ELASTIC_PAGE_SIZE, elasticFilteredData.length);
+  var pageItems = elasticFilteredData.slice(start, end);
+
+  elasticResultsEl.innerHTML = "";
+
+  pageItems.forEach(function (item) {
+    elasticResultsEl.appendChild(createEventCard(item));
+  });
+
+  elasticPrevBtn.disabled = elasticCurrentPage === 0;
+  elasticNextBtn.disabled = elasticCurrentPage >= totalPages - 1;
+  elasticPageInfo.textContent = "Page " + (elasticCurrentPage + 1) + " of " + totalPages;
+  elasticResultCount.textContent = elasticFilteredData.length + " results";
+}
+
 async function loadElasticListData() {
   try {
     var results = await queryElasticData();
@@ -560,7 +617,7 @@ async function loadElasticListData() {
       };
     });
 
-    new ElasticList({
+    elasticListInstance = new ElasticList({
       el: $("#elastic-list"),
       data: elasticListData,
       hasFilter: true,
@@ -573,14 +630,19 @@ async function loadElasticListData() {
         { title: "Year", attr: "year_label" }
       ],
       onchange: function (filters) {
-        var resultsContainer = document.getElementById("elastic-results-row");
-        resultsContainer.innerHTML = "";
+        elasticResultsEl.innerHTML = "";
 
         if (Object.keys(filters).length === 0) {
+          elasticFilteredData = [];
+          elasticCurrentPage = 0;
+          elasticPrevBtn.disabled = true;
+          elasticNextBtn.disabled = true;
+          elasticPageInfo.textContent = "";
+          elasticResultCount.textContent = "";
           return;
         }
 
-        var filtered = elasticListData.filter(function (item) {
+        elasticFilteredData = elasticListData.filter(function (item) {
           return Object.entries(filters).every(function (_ref) {
             var key = _ref[0];
             var value = _ref[1];
@@ -588,10 +650,8 @@ async function loadElasticListData() {
           });
         });
 
-        filtered.forEach(function (item) {
-          var card = createEventCard(item);
-          resultsContainer.appendChild(card);
-        });
+        elasticCurrentPage = 0;
+        renderElasticPage();
       }
     });
   } catch (error) {

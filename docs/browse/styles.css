@@ -455,6 +455,50 @@ details table {
   margin-top: 0;
 }
 
+.elastic-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.elastic-toolbar button {
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--border-mid);
+  background: var(--panel);
+  color: var(--border-dark);
+  font: inherit;
+  cursor: pointer;
+}
+
+.elastic-toolbar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.elastic-toolbar button:hover:not(:disabled) {
+  background: var(--panel-2);
+}
+
+.elastic-result-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.elastic-pagination {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#elastic-page-info {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 @media (max-width: 900px) {
   .layout {
     display: block;
