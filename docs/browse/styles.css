@@ -370,6 +370,40 @@ details table {
 .html-literal p:last-child {
   margin-bottom: 0;
 }
+
+#elastic-section {
+  background: var(--panel);
+  border: 2px solid var(--border-mid);
+  border-left: 8px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#elastic-section h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--border-dark);
+}
+
+.card {
+  border: 2px solid var(--border-soft);
+  background: var(--bg);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
 .layout {
   display: grid;
   grid-template-columns: 280px 1fr;

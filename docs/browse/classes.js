@@ -66,6 +66,8 @@ window.addEventListener("hashchange", () => {
   renderCurrentClass();
 });
 
+let elasticListData = [];
+
 loadClasses();
 
 async function loadClasses() {
@@ -82,6 +84,7 @@ async function loadClasses() {
     }
 
     renderClassTree(classes);
+    loadElasticListData();
 
     if (!getClassUriFromLocation()) {
       hideStatus();
@@ -515,4 +518,146 @@ function showStatus(message) {
 
 function hideStatus() {
   statusEl.hidden = true;
+}
+
+function queryElasticData() {
+  var query = `
+    PREFIX grace: <https://w3id.org/grace/ontology/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT DISTINCT ?event ?eventLabel ?personLabel ?placeLabel ?instLabel ?typeLabel ?dateLabel WHERE {
+      ?event <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> grace:apostolic_provision .
+      ?event rdfs:label ?eventLabel .
+      OPTIONAL { ?event grace:refers_to ?person . ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> grace:person . ?person rdfs:label ?personLabel . }
+      OPTIONAL { ?event grace:place_of_event ?place . ?place rdfs:label ?placeLabel . }
+      OPTIONAL { ?event grace:institution_object ?inst . ?inst rdfs:label ?instLabel . }
+      OPTIONAL { ?event grace:type_object ?type . ?type rdfs:label ?typeLabel . }
+      OPTIONAL { ?event grace:event_date ?dateNode . ?dateNode grace:called ?dateLabel . }
+    } LIMIT 2000
+  `;
+  return sparql(query);
+}
+
+async function loadElasticListData() {
+  try {
+    var results = await queryElasticData();
+    var bindings = results.results.bindings;
+
+    elasticListData = bindings.map(function (b) {
+      var dateLabel = b.dateLabel ? b.dateLabel.value : "";
+      var year = "";
+      var m = dateLabel.match(/(\d{4})/);
+      if (m) year = m[1];
+
+      return {
+        event_uri: b.event ? b.event.value : "",
+        event_label: b.eventLabel ? b.eventLabel.value : "",
+        person_label: b.personLabel ? b.personLabel.value : null,
+        place_label: b.placeLabel ? b.placeLabel.value : null,
+        inst_label: b.instLabel ? b.instLabel.value : null,
+        type_label: b.typeLabel ? b.typeLabel.value : null,
+        year_label: year
+      };
+    });
+
+    new ElasticList({
+      el: $("#elastic-list"),
+      data: elasticListData,
+      hasFilter: true,
+      align: "horizontal",
+      columns: [
+        { title: "Person", attr: "person_label" },
+        { title: "Institution", attr: "inst_label" },
+        { title: "Place", attr: "place_label" },
+        { title: "Type", attr: "type_label" },
+        { title: "Year", attr: "year_label" }
+      ],
+      onchange: function (filters) {
+        var resultsContainer = document.getElementById("elastic-results-row");
+        resultsContainer.innerHTML = "";
+
+        if (Object.keys(filters).length === 0) {
+          return;
+        }
+
+        var filtered = elasticListData.filter(function (item) {
+          return Object.entries(filters).every(function (_ref) {
+            var key = _ref[0];
+            var value = _ref[1];
+            return String(item[key] || "").toLowerCase() === String(value).toLowerCase();
+          });
+        });
+
+        filtered.forEach(function (item) {
+          var card = createEventCard(item);
+          resultsContainer.appendChild(card);
+        });
+      }
+    });
+  } catch (error) {
+    console.error("Elastic list data error:", error);
+  }
+}
+
+function createEventCard(item) {
+  var container = document.createElement("div");
+  container.className = "col-md-4 mb-4";
+
+  var card = document.createElement("div");
+  card.className = "card h-100";
+
+  var cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  var title = document.createElement("h5");
+  title.className = "card-title";
+  var link = document.createElement("a");
+  link.href = RESOURCE_VIEWER + "#" + encodeURIComponent(item.event_uri);
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = item.event_label;
+  link.className = "text-decoration-none";
+  title.appendChild(link);
+
+  cardBody.appendChild(title);
+
+  if (item.person_label) {
+    var p = document.createElement("p");
+    p.className = "card-text small";
+    p.textContent = "Person: " + item.person_label;
+    cardBody.appendChild(p);
+  }
+
+  if (item.inst_label) {
+    var p = document.createElement("p");
+    p.className = "card-text small";
+    p.textContent = "Institution: " + item.inst_label;
+    cardBody.appendChild(p);
+  }
+
+  if (item.place_label) {
+    var p = document.createElement("p");
+    p.className = "card-text small";
+    p.textContent = "Place: " + item.place_label;
+    cardBody.appendChild(p);
+  }
+
+  if (item.type_label) {
+    var p = document.createElement("p");
+    p.className = "card-text small text-muted";
+    p.textContent = "Type: " + item.type_label;
+    cardBody.appendChild(p);
+  }
+
+  if (item.year_label) {
+    var p = document.createElement("p");
+    p.className = "card-text small text-muted";
+    p.textContent = "Year: " + item.year_label;
+    cardBody.appendChild(p);
+  }
+
+  card.appendChild(cardBody);
+  container.appendChild(card);
+
+  return container;
 }
