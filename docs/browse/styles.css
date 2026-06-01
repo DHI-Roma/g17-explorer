@@ -499,6 +499,45 @@ details table {
   color: var(--muted);
 }
 
+/* --- Skeleton loading --- */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.elastic-list-skeleton {
+  display: flex;
+  gap: 1rem;
+  min-height: 200px;
+}
+
+.elastic-list-skeleton .sk-col {
+  flex: 1;
+  border: 2px solid var(--border-soft);
+  background: var(--bg);
+  padding: 0.6rem;
+}
+
+.elastic-list-skeleton .sk-head {
+  height: 1rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg, var(--border-soft) 25%, var(--panel-3) 50%, var(--border-soft) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.elastic-list-skeleton .sk-item {
+  height: 0.7rem;
+  margin-bottom: 0.45rem;
+  background: linear-gradient(90deg, var(--border-soft) 25%, var(--panel-3) 50%, var(--border-soft) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.elastic-list-skeleton .sk-item:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
   .layout {
     display: block;

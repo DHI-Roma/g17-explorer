@@ -595,7 +595,20 @@ function renderElasticPage() {
   elasticResultCount.textContent = elasticFilteredData.length + " results";
 }
 
+function showElasticLoading() {
+  var listEl = document.getElementById("elastic-list");
+  listEl.innerHTML = '<div class="elastic-list-skeleton">'
+    + '<div class="sk-col"><div class="sk-head"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div></div>'
+    + '<div class="sk-col"><div class="sk-head"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div></div>'
+    + '<div class="sk-col"><div class="sk-head"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div></div>'
+    + '<div class="sk-col"><div class="sk-head"></div><div class="sk-item"></div><div class="sk-item"></div><div class="sk-item"></div></div>'
+    + '<div class="sk-col"><div class="sk-head"></div><div class="sk-item"></div><div class="sk-item"></div></div>'
+    + '</div>';
+}
+
 async function loadElasticListData() {
+  showElasticLoading();
+
   try {
     var results = await queryElasticData();
     var bindings = results.results.bindings;
@@ -616,6 +629,8 @@ async function loadElasticListData() {
         year_label: year
       };
     });
+
+    document.getElementById("elastic-list").innerHTML = "";
 
     elasticListInstance = new ElasticList({
       el: $("#elastic-list"),
@@ -642,6 +657,8 @@ async function loadElasticListData() {
           return;
         }
 
+        elasticCurrentPage = 0;
+
         elasticFilteredData = elasticListData.filter(function (item) {
           return Object.entries(filters).every(function (_ref) {
             var key = _ref[0];
@@ -650,11 +667,13 @@ async function loadElasticListData() {
           });
         });
 
-        elasticCurrentPage = 0;
         renderElasticPage();
       }
     });
+
   } catch (error) {
+    var listEl = document.getElementById("elastic-list");
+    listEl.innerHTML = '<p class="text-muted">Failed to load browse data.</p>';
     console.error("Elastic list data error:", error);
   }
 }
