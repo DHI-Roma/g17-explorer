@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,6 +24,21 @@ jobs:
 
       - name: Render templates
         run: python render.py
+
+      - name: Commit generated HTML
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/
+
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+            exit 0
+          fi
+
+          git commit -m "Generate HTML"
+          git push
 
     # uncomment for remote deploy
     #   - name: Deploy to GitHub Pages
