@@ -370,6 +370,40 @@ details table {
 .html-literal p:last-child {
   margin-bottom: 0;
 }
+
+#elastic-section {
+  background: var(--panel);
+  border: 2px solid var(--border-mid);
+  border-left: 8px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#elastic-section h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--border-dark);
+}
+
+.card {
+  border: 2px solid var(--border-soft);
+  background: var(--bg);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
 .layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -419,6 +453,89 @@ details table {
 
 .class-content details {
   margin-top: 0;
+}
+
+.elastic-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.elastic-toolbar button {
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--border-mid);
+  background: var(--panel);
+  color: var(--border-dark);
+  font: inherit;
+  cursor: pointer;
+}
+
+.elastic-toolbar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.elastic-toolbar button:hover:not(:disabled) {
+  background: var(--panel-2);
+}
+
+.elastic-result-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.elastic-pagination {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#elastic-page-info {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --- Skeleton loading --- */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.elastic-list-skeleton {
+  display: flex;
+  gap: 1rem;
+  min-height: 200px;
+}
+
+.elastic-list-skeleton .sk-col {
+  flex: 1;
+  border: 2px solid var(--border-soft);
+  background: var(--bg);
+  padding: 0.6rem;
+}
+
+.elastic-list-skeleton .sk-head {
+  height: 1rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(90deg, var(--border-soft) 25%, var(--panel-3) 50%, var(--border-soft) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.elastic-list-skeleton .sk-item {
+  height: 0.7rem;
+  margin-bottom: 0.45rem;
+  background: linear-gradient(90deg, var(--border-soft) 25%, var(--panel-3) 50%, var(--border-soft) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.elastic-list-skeleton .sk-item:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
